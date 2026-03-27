@@ -607,6 +607,128 @@ h2.section-title.light { color: var(--white); }
 /* =========================================================
    TRUSTED BY STRIP
    ========================================================= */
+/* ── Client Marquee ── */
+.marquee-section {
+  background: var(--white);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.marquee-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.marquee-outer {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 52px;
+  border-right: 1px solid var(--border);
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.brand-svg {
+  height: 28px;
+  width: auto;
+  opacity: 0.65;
+}
+
+.sony-svg { height: 22px; }
+
+.brand-name {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.brand-wordmark {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.brand-wordmark.toshiba {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  color: #c8102e;
+  letter-spacing: 2px;
+}
+
+.brand-wordmark.sharp {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: 3px;
+}
+
+.brand-wordmark.alpine {
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  color: #003087;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.brand-wordmark.fenno {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.5px;
+}
+
+.brand-wordmark.hcl {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0066cc;
+  letter-spacing: 1px;
+}
+
+.hcl-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  display: block;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+/* keep old trusted-strip styles in case used elsewhere */
 .trusted-strip {
   background: var(--white);
   padding: 52px 0;
