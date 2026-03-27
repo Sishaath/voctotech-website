@@ -1775,6 +1775,12 @@ h2.section-title.light { color: var(--white); }
 /* =========================================================
    LEADERSHIP PAGE
    ========================================================= */
+.leadership-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .founder-card {
   background: var(--navy);
   border-radius: var(--radius-lg);
