@@ -1960,6 +1960,23 @@ h2.section-title.light { color: var(--white); }
   color: var(--cyan);
 }
 
+.founder-photo {
+  width: 160px;
+  height: 160px;
+  padding: 0;
+  overflow: hidden;
+  border: 3px solid rgba(0,194,255,0.5);
+}
+
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+}
+
 .founder-info { position: relative; z-index: 1; }
 
 .founder-info .role-tag {
