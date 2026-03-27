@@ -2674,3 +2674,137 @@ h2.section-title.light { color: var(--white); }
 
   .container { padding: 0 16px; }
 }
+
+/* =========================================================
+   COUNTER STRIP
+   ========================================================= */
+.counter-strip {
+  background: var(--navy);
+  padding: 56px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.counter-item {
+  text-align: center;
+  padding: 0 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.counter-item:last-child { border-right: none; }
+.counter-value {
+  font-family: var(--font-head);
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+.counter-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   CERTIFICATIONS SECTION
+   ========================================================= */
+.cert-section {
+  background: var(--navy);
+  padding: 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+.cert-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cert-card:hover {
+  background: rgba(0,194,255,0.05);
+  border-color: rgba(0,194,255,0.3);
+}
+.cert-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(0,194,255,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cert-icon svg { width: 28px; height: 28px; color: var(--cyan); }
+.cert-body {}
+.cert-title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.cert-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.cert-desc {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   WHATSAPP FLOAT BUTTON
+   ========================================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+}
+.whatsapp-float svg { width: 30px; height: 30px; }
+
+/* =========================================================
+   RESPONSIVE — COUNTER AND CERT
+   ========================================================= */
+@media (max-width: 768px) {
+  .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .counter-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 16px; }
+  .counter-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .counter-item:last-child, .counter-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  .counter-value { font-size: 36px; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-card { padding: 28px 24px; }
+}

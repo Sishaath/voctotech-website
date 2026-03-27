@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Vocto Technologies — Precision electronics, photonics manufacturing & cloud services from Chennai, India and Finland. MaaS, DDaaS, PDaaS, Cloud IaaS/SaaS. Est. 1995, MEPZ-SEZ Certified." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://voctotech.com/" />
+  <meta property="og:title" content="Vocto Technologies — Electronics &amp; Photonics Manufacturing, Chennai" />
+  <meta property="og:description" content="30 years of precision electronics and photonics manufacturing. MEPZ-SEZ certified, ISO 9001:2000. Serving aerospace, defence, healthcare and global OEMs from Chennai, India and Finland." />
+  <meta property="og:image" content="https://voctotech.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vocto Technologies" />
+  <meta name="twitter:description" content="Precision electronics &amp; photonics manufacturing. EST. 1995. Chennai, India &amp; Finland." />
   <title>Vocto Technologies — Building Visions, Shaping The Future</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
 </head>
 <body>
 
@@ -76,7 +86,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">EST. 1995 · MEPZ-SEZ CERTIFIED UNIT</div>
+        <div class="hero-badge">EST. 1995 · MEPZ-SEZ · ISO 9001:2000</div>
         <h1>Building Visions,<br><span class="accent">Shaping The Future</span></h1>
         <p class="hero-sub">
           Precision electronics and photonics manufacturing, advanced design services, and cloud solutions — delivered from Chennai's MEPZ-SEZ and our European base in Finland to global OEMs and technology leaders.
@@ -110,6 +120,30 @@
       </div>
     </div>
   </section>
+
+  <!-- COUNTER STRIP -->
+  <div class="counter-strip">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item">
+          <div class="counter-value" data-target="30" data-suffix="+">0+</div>
+          <div class="counter-label">Years of Precision Manufacturing</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-value" data-target="50000" data-suffix="K+" data-divide="1000">0K+</div>
+          <div class="counter-label">Units Delivered</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-value" data-target="7" data-suffix="">0</div>
+          <div class="counter-label">Global Clients Served</div>
+        </div>
+        <div class="counter-item">
+          <div class="counter-value" data-target="2" data-suffix="">0</div>
+          <div class="counter-label">International Offices</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CLIENT MARQUEE -->
   <div class="marquee-section">
@@ -434,6 +468,49 @@
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
+  <section class="cert-section">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Quality &amp; Compliance</span>
+        <h2 class="section-title light">Our Certifications</h2>
+      </div>
+      <div class="cert-grid">
+
+        <!-- ISO 9001:2000 -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">ISO 9001:2000</div>
+            <div class="cert-subtitle">Quality Management System</div>
+            <p class="cert-desc">Certified to the internationally recognised standard for quality management systems, ensuring consistent delivery of products and services that meet customer and regulatory requirements.</p>
+          </div>
+        </div>
+
+        <!-- MEPZ-SEZ -->
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="cert-body">
+            <div class="cert-title">MEPZ-SEZ Certified Unit</div>
+            <div class="cert-subtitle">Madras Export Processing Zone</div>
+            <p class="cert-desc">Operating as a certified unit within the MEPZ Special Economic Zone, Chennai — enabling preferential export terms, duty benefits, and compliance with India's SEZ framework for global manufacturing.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -517,7 +594,7 @@
 
       <!-- Copyright Bar -->
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 Vocto Technologies. All rights reserved. MEPZ-SEZ Certified Unit.</p>
+        <p class="footer-copy">&copy; 2025 Vocto Technologies. All rights reserved. MEPZ-SEZ Certified &middot; ISO 9001:2000</p>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
@@ -555,6 +632,58 @@
         hamburger.setAttribute('aria-expanded', false);
       });
     });
+
+    // Animated counters
+    (function () {
+      const counters = document.querySelectorAll('.counter-value[data-target]');
+      let animated = false;
+
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const divide = el.dataset.divide ? parseInt(el.dataset.divide, 10) : null;
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
+          if (divide) {
+            el.textContent = (current / divide) + suffix;
+          } else {
+            el.textContent = current + suffix;
+          }
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(animateCounter);
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const strip = document.querySelector('.counter-strip');
+      if (strip) observer.observe(strip);
+    })();
   </script>
+
+  <a href="https://wa.me/919841025930?text=Hello%20Vocto%20Technologies%2C%20I%27d%20like%20to%20enquire%20about%20your%20services."
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.529 5.865L.057 23.486a.75.75 0 0 0 .918.943l5.797-1.522A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.698-.504-5.25-1.385l-.374-.217-3.883 1.02 1.037-3.79-.237-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
 </body>
 </html>
