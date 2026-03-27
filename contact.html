@@ -134,17 +134,39 @@
             </div>
           </div>
 
-          <!-- Response Time -->
+          <!-- Response Time + Hours -->
           <div class="response-note">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>We typically respond to all enquiries within one business day (IST). For urgent matters, please call our India office directly.</span>
+            <div>
+              <strong>We usually respond within 24 hours.</strong><br>
+              <span>For urgent matters, call us directly.</span>
+            </div>
+          </div>
+
+          <div class="hours-block">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <strong>Business Hours</strong><br>
+              Mon – Fri: 9:00 AM – 6:00 PM IST<br>
+              <span class="hours-note">Saturday by appointment only</span>
+            </div>
+          </div>
+
+          <!-- Personal touch -->
+          <div class="personal-touch">
+            <div class="personal-avatars">
+              <img src="radhakrishnan.jpg" alt="Radhakrishnan R" />
+              <img src="meenakshi.jpg" alt="V Meenakshi Sundaram" />
+            </div>
+            <p>You'll be talking directly with our leadership team — not a call center.</p>
           </div>
         </div>
 
         <!-- RIGHT: Quote Form -->
         <div class="contact-col">
           <div class="form-card">
-            <h3>Request a Quote</h3>
+            <h3>Start Your Project</h3>
+            <p class="form-intro">Tell us what you're working on — we'll get back to you within 24 hours with ideas and next steps.</p>
             <form id="quoteForm" novalidate>
               <div class="form-row">
                 <div class="form-group" id="grp-name">
@@ -192,11 +214,20 @@
 
               <button type="submit" class="form-submit-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                Send Request
+                Get a Free Consultation
               </button>
 
+              <p class="privacy-note">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Your information will never be shared. We respect your privacy.
+              </p>
+
               <div class="success-message" id="successMsg" role="alert">
-                <strong>Thank you!</strong> Your enquiry has been received. Our team will be in touch within one business day.
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <div>
+                  <strong>Thanks! We've received your message.</strong><br>
+                  Our team will be in touch within 24 hours.
+                </div>
               </div>
             </form>
           </div>
@@ -218,9 +249,13 @@
 
         <!-- India -->
         <div class="office-card">
-          <div class="map-placeholder" role="img" aria-label="Chennai India office location">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Chennai, India</span>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.4!2d80.0776!3d12.9272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f4b2e1e1e1e%3A0x1!2sMEPZ-SEZ%2C+Tambaram%2C+Chennai%2C+Tamil+Nadu+600087!5e0!3m2!1sen!2sin!4v1"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Vocto Technologies Chennai Office Location">
+            </iframe>
           </div>
           <div class="office-card-body">
             <h4>🇮🇳 India Headquarters</h4>
@@ -259,6 +294,69 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:rrk@voctotech.com">rrk@voctotech.com</a>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What services does Vocto Technologies offer?
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We offer four core service lines: <strong>Manufacturing & Engineering as a Service (MaaS)</strong> — electronics and photonics manufacturing, PCB assembly, SMT; <strong>Design & Development (DDaaS)</strong> — hardware design, schematics, embedded firmware; <strong>Prototype Development (PDaaS)</strong> — rapid prototyping, DFM analysis, proof-of-concept builds; and <strong>Cloud Services (IaaS & SaaS)</strong> — hosted infrastructure and enterprise solutions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How soon can we start working together?
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Once we understand your requirements, we can typically begin within 1–2 weeks for prototyping and design projects, and 2–4 weeks for manufacturing engagements depending on volumes and material lead times. Submit the form above or call us directly and we'll schedule an initial consultation within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Do you work with international clients outside India?
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we actively serve international clients. Our MEPZ-SEZ certification enables us to export products globally under preferential duty structures, and our Finland office (Fenno Aurum Oy partnership) handles European operations. Past international clients include Audi, Sony, Sharp, Toshiba, and Alpine.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What industries do you specialise in?
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We serve Aerospace & Space, Defence, Healthcare & Medical, Photonics, Mining, XRF Food Analysis, Industrial Electronics, and Global OEMs. Our 30 years of experience means we understand the quality and compliance requirements specific to each of these sectors.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How do I get a pricing estimate?
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Pricing varies based on project complexity, volumes, materials, and timelines. Fill in the form above with your project details — the more specific you can be about requirements, the more accurate our quote will be. Initial consultations are completely free with no obligation.</p>
           </div>
         </div>
 
@@ -347,6 +445,23 @@
         mobileNav.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Close all
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        // Open clicked if it was closed
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
       });
     });
 
