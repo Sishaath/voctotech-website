@@ -2808,3 +2808,22 @@ h2.section-title.light { color: var(--white); }
   .cert-grid { grid-template-columns: 1fr; }
   .cert-card { padding: 28px 24px; }
 }
+
+/* Employee Portal button */
+.btn-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--navy-mid);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+.btn-portal:hover {
+  background: var(--navy);
+  color: var(--white);
+}
