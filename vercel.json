@@ -1,6 +1,11 @@
 {
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/leadership", "destination": "/leadership.html" },
+    { "source": "/partnerships", "destination": "/partnerships.html" },
     { "source": "/portal/(.*)", "destination": "/portal/index.html" },
     { "source": "/portal", "destination": "/portal/index.html" }
   ]
