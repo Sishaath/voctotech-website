@@ -558,10 +558,10 @@
           message: message.value.trim()
         };
 
-        fetch('https://formspree.io/f/admin@voctotechnologies.com', {
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify({ access_key: 'b8e2f1a4-3c9d-4e7f-a012-5b6c8d9e0f1a', ...data })
         })
         .then(res => {
           submitBtn.disabled = false;
