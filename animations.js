@@ -45,11 +45,9 @@
   ];
 
   function initReveal() {
-    // Track elements already assigned to avoid duplicate processing
     var seen = new WeakSet();
-
-    // Group siblings together so stagger is per-container
     var groups = new Map();
+
     SELECTORS.forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el) {
         if (seen.has(el)) return;
@@ -67,17 +65,26 @@
       });
     });
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('anim-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
+    // Force layout so opacity:0 is committed before we start observing.
+    // Double rAF ensures the hidden state is painted before IntersectionObserver
+    // fires for already-visible elements — otherwise there's nothing to animate from.
+    document.body.offsetHeight;
 
-    document.querySelectorAll('.anim').forEach(function (el) {
-      io.observe(el);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('anim-in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
+
+        document.querySelectorAll('.anim').forEach(function (el) {
+          io.observe(el);
+        });
+      });
     });
   }
 
