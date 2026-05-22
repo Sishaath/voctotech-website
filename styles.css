@@ -75,6 +75,7 @@ button, input, textarea, select { font-family: inherit; }
    TOP INFO BAR
    ========================================================= */
 .top-bar {
+  display: none;
   background: var(--navy);
   padding: 9px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -384,8 +385,8 @@ button, input, textarea, select { font-family: inherit; }
    HERO SECTION
    ========================================================= */
 .hero {
-  background: var(--navy);
-  padding: 100px 0 80px;
+  background: #F8FAFF;
+  padding: 110px 0 90px;
   position: relative;
   overflow: hidden;
 }
@@ -393,11 +394,11 @@ button, input, textarea, select { font-family: inherit; }
 .hero::before {
   content: '';
   position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(0,194,255,0.07) 0%, transparent 70%);
+  top: -160px;
+  right: -160px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,194,255,0.11) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -405,48 +406,29 @@ button, input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   bottom: -100px;
-  left: -100px;
+  left: -80px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(26,58,107,0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10,22,40,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.hero-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  z-index: 0;
-}
-
-.hero-bg-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to right,
-    rgba(10, 18, 40, 0.95) 0%,
-    rgba(10, 18, 40, 0.82) 50%,
-    rgba(10, 18, 40, 0.55) 100%
-  );
-}
+.hero-bg-img { display: none; }
+.hero-bg-overlay { display: none; }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 680px;
+  max-width: 700px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0,194,255,0.12);
-  border: 1px solid rgba(0,194,255,0.3);
-  color: var(--cyan);
+  background: rgba(10,22,40,0.06);
+  border: 1px solid rgba(10,22,40,0.12);
+  color: var(--navy-mid);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.2px;
@@ -472,20 +454,23 @@ button, input, textarea, select { font-family: inherit; }
 
 .hero h1 {
   font-family: var(--font-head);
-  font-size: clamp(38px, 5.5vw, 64px);
+  font-size: clamp(38px, 5.5vw, 68px);
   font-weight: 800;
-  color: var(--white);
-  line-height: 1.1;
-  letter-spacing: -1.5px;
+  color: var(--navy);
+  line-height: 1.05;
+  letter-spacing: -2px;
   margin-bottom: 24px;
 }
 
-.hero h1 .accent { color: var(--cyan); }
+.hero h1 .accent {
+  color: var(--cyan-dark);
+  position: relative;
+}
 
 .hero-sub {
   font-size: 17px;
-  color: var(--text-light);
-  line-height: 1.7;
+  color: var(--text-muted);
+  line-height: 1.75;
   margin-bottom: 40px;
   max-width: 560px;
 }
@@ -503,7 +488,7 @@ button, input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: stretch;
   gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--border);
   padding-top: 40px;
   flex-wrap: wrap;
 }
@@ -516,22 +501,22 @@ button, input, textarea, select { font-family: inherit; }
 
 .stat-item:not(:first-child) {
   padding-left: 32px;
-  border-left: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid var(--border);
 }
 
 .stat-value {
   font-family: var(--font-head);
   font-size: 32px;
   font-weight: 800;
-  color: var(--cyan);
+  color: var(--navy);
   line-height: 1;
   margin-bottom: 6px;
 }
 
 .stat-label {
   font-size: 13px;
-  color: var(--text-light);
-  font-weight: 400;
+  color: var(--text-muted);
+  font-weight: 500;
   letter-spacing: 0.3px;
 }
 
@@ -875,18 +860,7 @@ h2.section-title.light { color: var(--white); }
   line-height: 1.3;
 }
 
-.industry-visual {
-  width: 100%;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.industry-visual svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+.industry-visual { display: none; }
 
 .industry-desc {
   font-size: 12.5px;
@@ -987,7 +961,7 @@ h2.section-title.light { color: var(--white); }
    ========================================================= */
 .process-strip {
   background: var(--navy);
-  padding: 80px 0;
+  padding: 88px 0;
 }
 
 .process-steps {
@@ -1004,7 +978,7 @@ h2.section-title.light { color: var(--white); }
   left: calc(12.5% + 36px);
   right: calc(12.5% + 36px);
   height: 1px;
-  background: rgba(0,194,255,0.25);
+  background: rgba(0,194,255,0.2);
   z-index: 0;
 }
 
@@ -1013,7 +987,7 @@ h2.section-title.light { color: var(--white); }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 16px;
+  padding: 0 20px;
   position: relative;
   z-index: 1;
 }
@@ -1022,24 +996,24 @@ h2.section-title.light { color: var(--white); }
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(0,194,255,0.12);
-  border: 2px solid rgba(0,194,255,0.4);
+  background: rgba(0,194,255,0.1);
+  border: 1.5px solid rgba(0,194,255,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   transition: all var(--transition);
 }
 
 .process-step:hover .process-number {
-  background: rgba(0,194,255,0.2);
+  background: rgba(0,194,255,0.18);
   border-color: var(--cyan);
-  box-shadow: 0 0 0 8px rgba(0,194,255,0.08);
+  box-shadow: 0 0 0 8px rgba(0,194,255,0.07);
 }
 
 .process-number svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   color: var(--cyan);
 }
 
@@ -1048,14 +1022,14 @@ h2.section-title.light { color: var(--white); }
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: var(--cyan);
+  color: rgba(0,194,255,0.7);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 .process-step h4 {
   font-family: var(--font-head);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 8px;
@@ -1063,8 +1037,8 @@ h2.section-title.light { color: var(--white); }
 
 .process-step p {
   font-size: 13.5px;
-  color: var(--text-light);
-  line-height: 1.6;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
 }
 
 /* =========================================================
