@@ -19,6 +19,7 @@
     { "source": "/services", "destination": "/services.html" },
     { "source": "/leadership", "destination": "/leadership.html" },
     { "source": "/partnerships", "destination": "/partnerships.html" },
+    { "source": "/con-x", "destination": "/con-x.html" },
     { "source": "/portal/(.*)", "destination": "/portal/index.html" },
     { "source": "/portal", "destination": "/portal/index.html" }
   ]
