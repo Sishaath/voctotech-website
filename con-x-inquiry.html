@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit a CON-X XRF Conveyor Analyzer inquiry — Vocto Technologies. Complete the application questionnaire and receive a proposal from our technical team." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.voctotechnologies.com/con-x-inquiry" />
+  <meta property="og:title" content="CON-X Inquiry — Vocto Technologies" />
+  <meta property="og:description" content="Submit your CON-X application questionnaire. Authorized BSI distributor for India." />
+  <meta property="og:image" content="https://www.voctotechnologies.com/con-x-1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>CON-X Inquiry — Vocto Technologies</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <style>
+    .inquiry-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .inquiry-header {
+      background: var(--navy);
+      padding: 32px 40px;
+    }
+    .inquiry-header h2 {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .inquiry-header p { color: var(--text-light); font-size: 14px; }
+    .inquiry-body { padding: 40px; }
+    .form-section { margin-bottom: 36px; }
+    .form-section-title {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--cyan-dark);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+    .form-group label .req { color: #e53e3e; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--cyan-dark);
+      box-shadow: 0 0 0 3px rgba(0,153,204,0.12);
+    }
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error { border-color: #e53e3e; }
+    .form-group textarea { resize: vertical; min-height: 96px; }
+    .error-msg { font-size: 12px; color: #e53e3e; display: none; }
+    .has-error .error-msg { display: block; }
+    .hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .inquiry-submit {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 16px 36px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background var(--transition), transform var(--transition);
+      width: 100%;
+      justify-content: center;
+    }
+    .inquiry-submit:hover:not(:disabled) { background: var(--navy-mid); transform: translateY(-2px); }
+    .inquiry-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .inquiry-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .inquiry-success.show { display: block; }
+    .inquiry-no-display {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 2px;
+      margin: 12px 0 6px;
+    }
+    .inquiry-success p { color: var(--text-muted); font-size: 14px; }
+    .inquiry-success strong { color: var(--navy); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--cyan-dark);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 28px;
+    }
+    .back-link:hover { color: var(--navy); }
+    @media (max-width: 900px) {
+      .form-row, .form-row.three { grid-template-columns: 1fr; }
+      .inquiry-body { padding: 24px; }
+      .inquiry-header { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <a href="mailto:rrk@voctotechnologies.com" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        rrk@voctotechnologies.com
+      </a>
+      <div class="top-bar-divider"></div>
+      <a href="tel:+919841025930">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        +91 98410 25930
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="/" class="logo" aria-label="Vocto Technologies Home">
+          <img src="logo.png" alt="Vocto Technologies logo" class="logo-img" />
+          <div class="logo-text">Vocto Technologies<span>Est. 1995</span></div>
+        </a>
+        <ul class="nav-links" role="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/con-x" class="active">CON-X</a></li>
+          <li><a href="/leadership">Leadership</a></li>
+          <li><a href="/partnerships">Partnerships</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="/portal/" class="btn-portal desktop-only">Employee Portal</a>
+        <a href="/con-x" class="btn-nav-cta desktop-only">Back to CON-X</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/con-x" class="active">CON-X</a>
+        <a href="/leadership">Leadership</a>
+        <a href="/partnerships">Partnerships</a>
+        <a href="/contact">Contact</a>
+        <a href="/portal/">Employee Portal</a>
+        <a href="/con-x" class="btn-nav-cta">Back to CON-X</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">CON-X XRF Analyzer</div>
+        <h1>Application Questionnaire</h1>
+        <p>Complete this questionnaire so our technical team can prepare an accurate proposal for your application. You will receive a confirmation email with your inquiry number immediately on submission.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section class="section section-light">
+    <div class="container" style="max-width:860px;">
+
+      <a href="/con-x" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to CON-X Product Page
+      </a>
+
+      <div class="inquiry-wrap">
+        <div class="inquiry-header">
+          <h2>Technical Inquiry Form</h2>
+          <p>Fields marked <span style="color:#00C2FF;">*</span> are required. All information is kept strictly confidential.</p>
+        </div>
+        <div class="inquiry-body">
+          <form id="conxForm" novalidate>
+
+            <!-- Section 1: Contact -->
+            <div class="form-section">
+              <div class="form-section-title">1 — Contact Information</div>
+              <div class="form-row">
+                <div class="form-group" id="grp-fullName">
+                  <label for="fullName">Full Name <span class="req">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name" />
+                  <span class="error-msg">Please enter your full name.</span>
+                </div>
+                <div class="form-group" id="grp-company">
+                  <label for="company">Company / Organisation <span class="req">*</span></label>
+                  <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization" />
+                  <span class="error-msg">Please enter your company name.</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group" id="grp-email">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" />
+                  <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                  <option value="" disabled selected>Select country…</option>
+                  <option value="India">India</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Section 2: Application -->
+            <div class="form-section">
+              <div class="form-section-title">2 — Application Details</div>
+              <div class="form-group" id="grp-material">
+                <label for="material">Type of Material on Conveyor <span class="req">*</span></label>
+                <input type="text" id="material" name="material" placeholder="e.g. Iron ore, Coal, Copper concentrate, Limestone…" />
+                <span class="error-msg">Please describe the material.</span>
+              </div>
+              <div class="form-group" id="grp-application">
+                <label for="application">Application Description <span class="req">*</span></label>
+                <textarea id="application" name="application" placeholder="Describe what you want to measure and why — e.g. grade control, sorting, process optimisation…"></textarea>
+                <span class="error-msg">Please describe your application.</span>
+              </div>
+              <div class="form-group">
+                <label for="currentMethod">Current Method of Elemental Analysis (if any)</label>
+                <input type="text" id="currentMethod" name="currentMethod" placeholder="e.g. Laboratory XRF, ICP-OES, None…" />
+              </div>
+            </div>
+
+            <!-- Section 3: Elements -->
+            <div class="form-section">
+              <div class="form-section-title">3 — Elements &amp; Measurement Requirements</div>
+              <div class="form-group">
+                <label for="elements">Elements of Interest</label>
+                <input type="text" id="elements" name="elements" placeholder="e.g. Fe, SiO₂, Al₂O₃, Cu, Zn, Pb…" />
+                <span class="hint">List all elements or oxides you need to measure or monitor.</span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="concentrations">Expected Concentration Range</label>
+                  <input type="text" id="concentrations" name="concentrations" placeholder="e.g. Fe: 40–65%, SiO₂: 5–20%…" />
+                </div>
+                <div class="form-group">
+                  <label for="accuracy">Required Measurement Accuracy</label>
+                  <input type="text" id="accuracy" name="accuracy" placeholder="e.g. ±0.5% Fe, ±1% SiO₂…" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4: Conveyor -->
+            <div class="form-section">
+              <div class="form-section-title">4 — Conveyor Specifications</div>
+              <div class="form-row three">
+                <div class="form-group">
+                  <label for="beltWidth">Belt Width (mm)</label>
+                  <input type="number" id="beltWidth" name="beltWidth" placeholder="e.g. 1200" min="0" />
+                </div>
+                <div class="form-group">
+                  <label for="beltSpeed">Belt Speed (m/s)</label>
+                  <input type="number" id="beltSpeed" name="beltSpeed" placeholder="e.g. 1.5" step="0.01" min="0" />
+                </div>
+                <div class="form-group">
+                  <label for="materialHeight">Material Height on Belt (cm)</label>
+                  <input type="number" id="materialHeight" name="materialHeight" placeholder="e.g. 15" min="0" />
+                  <span class="hint">CON-X range: 6–25 cm from material surface</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5: Environment -->
+            <div class="form-section">
+              <div class="form-section-title">5 — Operating Conditions</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="installType">Installation Type</label>
+                  <select id="installType" name="installType">
+                    <option value="" disabled selected>Select…</option>
+                    <option>Indoor</option>
+                    <option>Outdoor</option>
+                    <option>Underground</option>
+                    <option>Semi-enclosed</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="dustLevel">Dust Level</label>
+                  <select id="dustLevel" name="dustLevel">
+                    <option value="" disabled selected>Select…</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Very High</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="tempRange">Ambient Temperature Range (°C)</label>
+                  <input type="text" id="tempRange" name="tempRange" placeholder="e.g. 10°C to 45°C" />
+                </div>
+                <div class="form-group">
+                  <label for="humidity">Relative Humidity (%)</label>
+                  <input type="text" id="humidity" name="humidity" placeholder="e.g. 30–90% RH" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 6: Integration -->
+            <div class="form-section">
+              <div class="form-section-title">6 — System Integration &amp; Timeline</div>
+              <div class="form-group">
+                <label for="outputs">Output / Communication Required</label>
+                <select id="outputs" name="outputs">
+                  <option value="" disabled selected>Select primary output…</option>
+                  <option>OPC</option>
+                  <option>4–20 mA Analogue</option>
+                  <option>Ethernet / LAN</option>
+                  <option>OPC + 4–20 mA</option>
+                  <option>All outputs</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="integration">Integration with Existing Control System</label>
+                <input type="text" id="integration" name="integration" placeholder="e.g. Siemens WinCC SCADA, ABB DCS, standalone display…" />
+              </div>
+              <div class="form-group">
+                <label for="timeline">Expected Procurement Timeline</label>
+                <select id="timeline" name="timeline">
+                  <option value="" disabled selected>Select…</option>
+                  <option>Immediately</option>
+                  <option>Within 3 months</option>
+                  <option>3–6 months</option>
+                  <option>6–12 months</option>
+                  <option>Exploring / budgeting</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Section 7: Additional -->
+            <div class="form-section">
+              <div class="form-section-title">7 — Additional Information</div>
+              <div class="form-group">
+                <label for="additional">Additional Requirements or Questions</label>
+                <textarea id="additional" name="additional" placeholder="Any other details, site-specific constraints, or questions for our technical team…" style="min-height:120px;"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="inquiry-submit" id="submitBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Inquiry
+            </button>
+
+            <div class="inquiry-success" id="successMsg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <p style="font-size:16px;font-weight:700;color:#15803d;margin:12px 0 4px;">Inquiry Submitted Successfully</p>
+              <div class="inquiry-no-display" id="inquiryNoDisplay"></div>
+              <p>Your inquiry number has been sent to your email address. Our technical team will respond within <strong>1 business day</strong>.</p>
+              <p style="margin-top:8px;">For urgent matters: <a href="mailto:rrk@voctotechnologies.com" style="color:#0099CC;">rrk@voctotechnologies.com</a> &nbsp;|&nbsp; <a href="tel:+919841025930" style="color:#0099CC;">+91 98410 25930</a></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="logo.png" alt="Vocto Technologies logo" class="logo-img footer-logo-img" />
+            <div class="logo-text">Vocto Technologies</div>
+          </div>
+          <p class="footer-tagline">Building Visions, Shaping The Future. Authorized Indian distributor for Baltic Scientific Instruments — precision XRF measurement solutions.</p>
+          <div class="footer-socials">
+            <a href="mailto:rrk@voctotechnologies.com" class="social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/con-x">CON-X Analyzer</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="/con-x">CON-X XRF Conveyor Analyzer</a></li>
+            <li><a href="/con-x-inquiry">Submit Inquiry</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="footer-contact-text"><strong>Email</strong>rrk@voctotechnologies.com</div>
+          </div>
+          <div class="footer-contact-item" style="margin-top:12px;">
+            <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg></div>
+            <div class="footer-contact-text"><strong>Phone</strong>+91 98410 25930</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Vocto Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+    function setError(groupId, inputEl, hasError) {
+      const g = document.getElementById(groupId);
+      if (!g) return;
+      g.classList.toggle('has-error', hasError);
+      if (inputEl) inputEl.classList.toggle('error', hasError);
+    }
+
+    ['fullName','company','email','material','application'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => setError('grp-' + id, el, false));
+    });
+
+    document.getElementById('conxForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const get = id => document.getElementById(id);
+      const val = id => get(id) ? get(id).value.trim() : '';
+
+      let ok = true;
+      const checks = [
+        ['fullName', val('fullName')],
+        ['company', val('company')],
+        ['email', val('email') && validateEmail(val('email'))],
+        ['material', val('material')],
+        ['application', val('application')],
+      ];
+      checks.forEach(([id, valid]) => {
+        setError('grp-' + id, get(id), !valid);
+        if (!valid) ok = false;
+      });
+
+      if (!ok) {
+        const first = document.querySelector('.has-error input, .has-error textarea');
+        if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); first.focus(); }
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Submitting…';
+
+      const payload = {
+        fullName: val('fullName'), company: val('company'),
+        email: val('email'), phone: val('phone'), country: val('country'),
+        material: val('material'), application: val('application'), currentMethod: val('currentMethod'),
+        elements: val('elements'), concentrations: val('concentrations'), accuracy: val('accuracy'),
+        beltWidth: val('beltWidth'), beltSpeed: val('beltSpeed'), materialHeight: val('materialHeight'),
+        installType: val('installType'), tempRange: val('tempRange'), humidity: val('humidity'), dustLevel: val('dustLevel'),
+        outputs: val('outputs'), integration: val('integration'), timeline: val('timeline'),
+        additional: val('additional'),
+      };
+
+      try {
+        const res = await fetch('/api/con-x-inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (res.ok && data.inquiryNo) {
+          document.getElementById('inquiryNoDisplay').textContent = data.inquiryNo;
+          document.getElementById('successMsg').classList.add('show');
+          this.reset();
+          document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          alert('Something went wrong. Please email us directly at rrk@voctotechnologies.com');
+        }
+      } catch {
+        alert('Network error. Please email us at rrk@voctotechnologies.com or call +91 98410 25930');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Inquiry';
+      }
+    });
+  </script>
+</body>
+</html>

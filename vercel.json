@@ -20,6 +20,7 @@
     { "source": "/leadership", "destination": "/leadership.html" },
     { "source": "/partnerships", "destination": "/partnerships.html" },
     { "source": "/con-x", "destination": "/con-x.html" },
+    { "source": "/con-x-inquiry", "destination": "/con-x-inquiry.html" },
     { "source": "/portal/(.*)", "destination": "/portal/index.html" },
     { "source": "/portal", "destination": "/portal/index.html" }
   ]
