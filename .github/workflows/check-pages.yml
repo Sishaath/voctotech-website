@@ -1,0 +1,14 @@
+name: Check Pages
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all pages and assets exist
+        run: node .github/scripts/check-pages.js
