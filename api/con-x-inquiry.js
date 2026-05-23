@@ -156,7 +156,7 @@ module.exports = async function handler(req, res) {
     const [adminRes, customerRes] = await Promise.all([
       resendRequest({
         from: 'Vocto Technologies CON-X <onboarding@resend.dev>',
-        to: ['rrk@voctotechnologies.com', 'aruljothi@voctotechnologies.com'],
+        to: ['sishaath@voctotechnologies.com'],
         reply_to: email,
         subject: `[${inquiryNo}] New CON-X Inquiry — ${company}`,
         html: adminHtml,
