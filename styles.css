@@ -392,7 +392,7 @@ p { text-align: justify; }
     radial-gradient(ellipse 50% 70% at 10% 80%, rgba(0,100,200,0.10) 0%, transparent 55%),
     radial-gradient(ellipse 40% 40% at 90% 10%, rgba(0,194,255,0.06) 0%, transparent 50%),
     var(--navy);
-  padding: 80px 0 72px;
+  padding: 48px 0 44px;
   position: relative;
   overflow: hidden;
 }
@@ -679,6 +679,76 @@ h2.section-title.light { color: var(--white); }
    TRUSTED BY STRIP
    ========================================================= */
 /* ── Client Marquee ── */
+/* --- BSI Distributor Banner --- */
+.bsi-banner {
+  background: linear-gradient(90deg, #c0501a 0%, #d97028 45%, #e8a040 100%);
+  padding: 20px 0;
+}
+.bsi-banner-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.bsi-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.bsi-official {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+}
+.bsi-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.35);
+  flex-shrink: 0;
+}
+.bsi-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bsi-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.bsi-desc {
+  flex: 1;
+  font-size: 14px;
+  color: rgba(255,255,255,0.92);
+  margin: 0;
+  text-align: left;
+  min-width: 200px;
+}
+.bsi-desc strong { color: #fff; }
+.bsi-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0e1f4a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.bsi-cta:hover { background: #162a6a; }
+
 .marquee-section {
   background: var(--white);
   padding: 36px 0;
