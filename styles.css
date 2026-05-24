@@ -386,7 +386,11 @@ button, input, textarea, select { font-family: inherit; }
    HERO SECTION
    ========================================================= */
 .hero {
-  background: var(--navy);
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,194,255,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(0,100,200,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 90% 10%, rgba(0,194,255,0.06) 0%, transparent 50%),
+    var(--navy);
   padding: 80px 0 72px;
   position: relative;
   overflow: hidden;
@@ -395,9 +399,20 @@ button, input, textarea, select { font-family: inherit; }
 .hero::before {
   content: '';
   position: absolute;
-  top: -180px; right: -180px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(0,194,255,0.08) 0%, transparent 65%);
+  inset: 0;
+  background-image: radial-gradient(rgba(0,194,255,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; left: -120px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(0,120,255,0.09) 0%, transparent 65%);
   pointer-events: none;
 }
 
