@@ -1226,14 +1226,14 @@ h2.section-title.light { color: var(--white); }
    ========================================================= */
 .footer {
   background: #06101E;
-  padding: 72px 0 0;
+  padding: 40px 0 0;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
-  gap: 40px;
-  padding-bottom: 56px;
+  gap: 32px;
+  padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
