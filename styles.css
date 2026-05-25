@@ -748,6 +748,12 @@ h2.section-title.light { color: var(--white); }
   transition: background 0.2s;
 }
 .bsi-cta:hover { background: #162a6a; }
+.bsi-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
 
 .marquee-section {
   background: var(--white);
@@ -844,12 +850,15 @@ h2.section-title.light { color: var(--white); }
   letter-spacing: 1px;
 }
 
-.brand-wordmark.fenno {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 600;
-  color: #444;
-  letter-spacing: 0.5px;
+.brand-logo-img {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+.brand-logo-img.fenno-logo {
+  height: 28px;
+  opacity: 0.75;
 }
 
 .brand-wordmark.hcl {
