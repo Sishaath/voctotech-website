@@ -388,10 +388,10 @@ p { text-align: justify; }
    ========================================================= */
 .hero {
   background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,194,255,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(0,100,200,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 90% 10%, rgba(0,194,255,0.06) 0%, transparent 50%),
-    var(--navy);
+    radial-gradient(ellipse 70% 80% at 80% 50%, rgba(0,194,255,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 60% at 5% 85%,  rgba(0,80,200,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 95% 5%,  rgba(0,194,255,0.10) 0%, transparent 50%),
+    linear-gradient(160deg, #071020 0%, #0a1628 50%, #06182e 100%);
   padding: 48px 0 44px;
   position: relative;
   overflow: hidden;
@@ -401,19 +401,19 @@ p { text-align: justify; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(0,194,255,0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 20%, transparent 75%);
+  background-image:
+    linear-gradient(rgba(0,194,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,194,255,0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
   pointer-events: none;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  bottom: -120px; left: -120px;
-  width: 480px; height: 480px;
-  background: radial-gradient(circle, rgba(0,120,255,0.09) 0%, transparent 65%);
+  bottom: -80px; right: -80px;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(0,150,255,0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -682,7 +682,7 @@ h2.section-title.light { color: var(--white); }
 /* --- BSI Distributor Banner --- */
 .bsi-banner {
   background: linear-gradient(100deg, #b84a15 0%, #d96820 40%, #e8952e 75%, #f0b040 100%);
-  padding: 28px 0;
+  padding: 14px 0;
   position: relative;
   overflow: hidden;
 }
@@ -739,8 +739,8 @@ h2.section-title.light { color: var(--white); }
   align-items: center;
   gap: 10px;
   background: #fff;
-  border-radius: 8px;
-  padding: 6px 14px;
+  border-radius: 6px;
+  padding: 4px 10px;
 }
 .bsi-name {
   font-size: 13px;
@@ -750,7 +750,7 @@ h2.section-title.light { color: var(--white); }
 }
 .bsi-desc {
   flex: 1;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: rgba(255,255,255,0.95);
   margin: 0;
@@ -776,8 +776,8 @@ h2.section-title.light { color: var(--white); }
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.02em;
-  padding: 12px 28px;
-  border-radius: 8px;
+  padding: 8px 20px;
+  border-radius: 6px;
   white-space: nowrap;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   animation: bsi-pulse 2.4s ease-in-out infinite;
@@ -789,7 +789,7 @@ h2.section-title.light { color: var(--white); }
   animation: none;
 }
 .bsi-logo-img {
-  height: 40px;
+  height: 28px;
   width: auto;
   object-fit: contain;
 }
