@@ -686,15 +686,20 @@ h2.section-title.light { color: var(--white); }
   position: relative;
   overflow: hidden;
 }
+@keyframes bsi-sweep {
+  0%   { left: -40%; }
+  100% { left: 120%; }
+}
 .bsi-banner::before {
   content: '';
   position: absolute;
-  top: -60%;
-  left: -10%;
-  width: 40%;
-  height: 220%;
-  background: rgba(255,255,255,0.07);
-  transform: skewX(-20deg);
+  top: 0;
+  left: -40%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+  transform: skewX(-15deg);
+  animation: bsi-sweep 3.5s ease-in-out infinite;
   pointer-events: none;
 }
 .bsi-banner-inner {
@@ -781,7 +786,7 @@ h2.section-title.light { color: var(--white); }
   animation: none;
 }
 .bsi-logo-img {
-  height: 38px;
+  height: 52px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -884,13 +889,12 @@ h2.section-title.light { color: var(--white); }
 
 .brand-logo-img {
   display: block;
-  height: 32px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 .brand-logo-img.fenno-logo {
-  height: 28px;
-  opacity: 0.75;
+  height: 40px;
 }
 
 .brand-wordmark.hcl {
