@@ -142,10 +142,11 @@ module.exports = async function handler(req, res) {
 
     <h3 style="color:#1A3A6B;font-size:15px;">What happens next?</h3>
     <ol style="padding-left:20px;color:#0A1628;line-height:2;">
-      <li>Our team reviews your technical requirements (within 1 business day)</li>
-      <li>We prepare a preliminary proposal with specifications and pricing</li>
+      <li>Our team reviews your technical requirements (within 1-2 business days)</li>
       <li>We schedule a consultation call to discuss your application in detail</li>
-      <li>Final quotation and delivery timeline provided</li>
+      <li>We prepare preliminary specifications based on your requirements</li>
+      <li>Pricing proposal provided based on specifications</li>
+      <li>Final quotation and delivery timeline confirmed</li>
     </ol>
 
     <p>For urgent enquiries, contact us directly:</p>
