@@ -23,11 +23,19 @@ function resendRequest(payload) {
   });
 }
 
-function generateInquiryNumber() {
+async function generateInquiryNumber() {
   const now = new Date();
   const yyyymmdd = now.toISOString().slice(0, 10).replace(/-/g, '');
-  const rand = String(Math.floor(1000 + Math.random() * 9000));
-  return `VT-CONX-${yyyymmdd}-${rand}`;
+  let seq = 501;
+  try {
+    const r = await fetch(
+      `${process.env.UPSTASH_REDIS_REST_URL}/incr/conx-inquiry-seq`,
+      { headers: { Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}` } }
+    );
+    const d = await r.json();
+    seq = 500 + (d.result || 1);
+  } catch (_) {}
+  return `VT-CONX-${yyyymmdd}-${String(seq).padStart(3, '0')}`;
 }
 
 module.exports = async function handler(req, res) {
@@ -49,7 +57,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Required fields missing' });
   }
 
-  const inquiryNo = generateInquiryNumber();
+  const inquiryNo = await generateInquiryNumber();
   const submittedAt = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
   const adminHtml = `
@@ -142,8 +150,8 @@ module.exports = async function handler(req, res) {
 
     <p>For urgent enquiries, contact us directly:</p>
     <p>
-      <strong>rrk@voctotechnologies.com</strong><br>
-      <strong>+91 98410 25930</strong>
+      <strong>admin@voctotechnologies.com</strong><br>
+      <strong>+91 99941 78734</strong>
     </p>
 
     <div style="background:#0A1628;padding:16px;border-radius:6px;margin-top:24px;text-align:center;">
