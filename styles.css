@@ -738,6 +738,9 @@ h2.section-title.light { color: var(--white); }
   display: flex;
   align-items: center;
   gap: 10px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 14px;
 }
 .bsi-name {
   font-size: 13px;
@@ -786,10 +789,9 @@ h2.section-title.light { color: var(--white); }
   animation: none;
 }
 .bsi-logo-img {
-  height: 52px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .marquee-section {
