@@ -681,8 +681,21 @@ h2.section-title.light { color: var(--white); }
 /* ── Client Marquee ── */
 /* --- BSI Distributor Banner --- */
 .bsi-banner {
-  background: linear-gradient(90deg, #c0501a 0%, #d97028 45%, #e8a040 100%);
-  padding: 20px 0;
+  background: linear-gradient(100deg, #b84a15 0%, #d96820 40%, #e8952e 75%, #f0b040 100%);
+  padding: 28px 0;
+  position: relative;
+  overflow: hidden;
+}
+.bsi-banner::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -10%;
+  width: 40%;
+  height: 220%;
+  background: rgba(255,255,255,0.07);
+  transform: skewX(-20deg);
+  pointer-events: none;
 }
 .bsi-banner-inner {
   max-width: var(--max-w);
@@ -690,27 +703,30 @@ h2.section-title.light { color: var(--white); }
   padding: 0 var(--gap);
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  gap: 28px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 .bsi-banner-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-shrink: 0;
 }
 .bsi-official {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.85);
   white-space: nowrap;
 }
 .bsi-divider {
   width: 1px;
-  height: 36px;
-  background: rgba(255,255,255,0.35);
+  height: 40px;
+  background: rgba(255,255,255,0.4);
   flex-shrink: 0;
 }
 .bsi-logo-block {
@@ -726,30 +742,46 @@ h2.section-title.light { color: var(--white); }
 }
 .bsi-desc {
   flex: 1;
-  font-size: 14px;
-  color: rgba(255,255,255,0.92);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
   margin: 0;
   text-align: left;
   min-width: 200px;
+  max-width: 420px;
 }
-.bsi-desc strong { color: #fff; }
+.bsi-desc strong {
+  color: #fff;
+  font-weight: 700;
+}
+@keyframes bsi-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+}
 .bsi-cta {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0e1f4a;
-  color: #fff;
+  background: #fff;
+  color: #b84a15;
   font-size: 14px;
-  font-weight: 600;
-  padding: 10px 22px;
-  border-radius: 6px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 12px 28px;
+  border-radius: 8px;
   white-space: nowrap;
-  transition: background 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: bsi-pulse 2.4s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.bsi-cta:hover { background: #162a6a; }
+.bsi-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  animation: none;
+}
 .bsi-logo-img {
-  height: 36px;
+  height: 38px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
