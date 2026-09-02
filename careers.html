@@ -330,69 +330,20 @@
 
         <!-- ============================================================
              HOW TO ADD A NEW JOB:
-             Copy one job-card block below, paste it here, and update:
+             Copy a job-card block (see git history for the markup), paste
+             it here, and update:
              - data-position (used in the application form dropdown)
              - .job-dept  (e.g. Engineering, Operations, Sales)
              - .job-title
              - .job-desc
              - .job-tags (location, type, skills)
+             Also remove the .no-openings block below when openings exist.
              ============================================================ -->
 
-        <div class="job-card" data-position="Electronics Design Engineer">
-          <div class="job-info">
-            <div class="job-dept">Engineering</div>
-            <div class="job-title">Electronics Design Engineer</div>
-            <p class="job-desc">Design and develop PCB layouts, schematics, and embedded firmware for precision electronics products. Collaborate with manufacturing teams to ensure DFM compliance and quality standards.</p>
-            <div class="job-tags">
-              <span class="job-tag location">Chennai, India</span>
-              <span class="job-tag type">Full Time</span>
-              <span class="job-tag">PCB Design</span>
-              <span class="job-tag">Embedded Systems</span>
-              <span class="job-tag">Altium / KiCad</span>
-            </div>
-          </div>
-          <a href="#apply" class="job-apply-btn" onclick="selectRole('Electronics Design Engineer')">
-            Apply Now
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <div class="job-card" data-position="Manufacturing Technician">
-          <div class="job-info">
-            <div class="job-dept">Manufacturing</div>
-            <div class="job-title">Manufacturing Technician - SMT / PCB Assembly</div>
-            <p class="job-desc">Operate and maintain SMT assembly lines, perform through-hole soldering, conformal coating, and quality inspection. Work to IPC standards in our MEPZ-SEZ certified facility.</p>
-            <div class="job-tags">
-              <span class="job-tag location">Chennai, India</span>
-              <span class="job-tag type">Full Time</span>
-              <span class="job-tag">SMT</span>
-              <span class="job-tag">IPC Standards</span>
-              <span class="job-tag">Quality Inspection</span>
-            </div>
-          </div>
-          <a href="#apply" class="job-apply-btn" onclick="selectRole('Manufacturing Technician')">
-            Apply Now
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <div class="job-card" data-position="Business Development Executive">
-          <div class="job-info">
-            <div class="job-dept">Sales and Business Development</div>
-            <div class="job-title">Business Development Executive</div>
-            <p class="job-desc">Identify and develop new client relationships in the electronics manufacturing and engineering services sector. Drive revenue growth across aerospace, defence, healthcare, and industrial markets.</p>
-            <div class="job-tags">
-              <span class="job-tag location">Chennai, India</span>
-              <span class="job-tag type">Full Time</span>
-              <span class="job-tag">B2B Sales</span>
-              <span class="job-tag">Electronics Industry</span>
-              <span class="job-tag">Account Management</span>
-            </div>
-          </div>
-          <a href="#apply" class="job-apply-btn" onclick="selectRole('Business Development Executive')">
-            Apply Now
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <div class="no-openings">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <h3>No Open Positions Right Now</h3>
+          <p>We do not have any active openings at the moment. Check back soon, or reach out to us directly if you believe you would be a great fit for our team.</p>
         </div>
 
       </div>
