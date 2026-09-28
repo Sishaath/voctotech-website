@@ -90,6 +90,12 @@
     }
     .job-apply-btn:hover { background: var(--navy-mid); transform: translateY(-2px); }
 
+    .job-card.highlight {
+      border-color: var(--cyan-dark);
+      box-shadow: 0 0 0 3px rgba(0,153,204,0.18), var(--shadow-md);
+      transition: box-shadow 0.6s ease, border-color 0.6s ease;
+    }
+
     .job-details { margin-top: 16px; }
     .job-details summary {
       cursor: pointer;
@@ -300,7 +306,7 @@
              Also remove the .no-openings block below when openings exist.
              ============================================================ -->
 
-        <div class="job-card" data-position="Administration &amp; Operations Executive">
+        <div class="job-card" id="administration-operations-executive" data-position="Administration &amp; Operations Executive">
           <div class="job-info">
             <div class="job-dept">Administration &amp; Operations</div>
             <div class="job-title">Administration &amp; Operations Executive</div>
@@ -358,7 +364,7 @@
           </a>
         </div>
 
-        <div class="job-card" data-position="Office &amp; Administrative Assistant">
+        <div class="job-card" id="office-administrative-assistant" data-position="Office &amp; Administrative Assistant">
           <div class="job-info">
             <div class="job-dept">Office Administration</div>
             <div class="job-title">Office &amp; Administrative Assistant</div>
@@ -421,7 +427,7 @@
           </a>
         </div>
 
-        <div class="job-card" data-position="Prototype Assembly &amp; Mechanical Technician">
+        <div class="job-card" id="prototype-assembly-mechanical-technician" data-position="Prototype Assembly &amp; Mechanical Technician">
           <div class="job-info">
             <div class="job-dept">Engineering &amp; Prototype Development</div>
             <div class="job-title">Prototype Assembly &amp; Mechanical Technician</div>
@@ -650,6 +656,20 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
+    // Deep-link support: /careers#job-id scrolls to and highlights that listing,
+    // and opens its full description. Used for LinkedIn "external apply" URLs.
+    if (location.hash) {
+      const target = document.querySelector(location.hash);
+      if (target && target.classList.contains('job-card')) {
+        target.querySelector('details.job-details')?.setAttribute('open', '');
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('highlight');
+          setTimeout(() => target.classList.remove('highlight'), 2500);
+        }, 100);
+      }
+    }
+
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     hamburger.addEventListener('click', () => {
