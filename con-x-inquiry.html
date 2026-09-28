@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     .inquiry-wrap {
       background: var(--white);
@@ -211,6 +212,8 @@
         </div>
         <div class="inquiry-body">
           <form id="conxForm" novalidate>
+            <!-- Honeypot: hidden from real users, bots auto-fill it -->
+            <input type="text" name="_hp" id="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;pointer-events:none;" />
 
             <!-- Section 1: Contact -->
             <div class="form-section">
@@ -229,9 +232,9 @@
               </div>
               <div class="form-row">
                 <div class="form-group" id="grp-email">
-                  <label for="email">Email Address <span class="req">*</span></label>
+                  <label for="email">Business Email Address <span class="req">*</span></label>
                   <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" />
-                  <span class="error-msg">Please enter a valid email address.</span>
+                  <span class="error-msg" id="email-error-msg">Please enter a valid email address.</span>
                 </div>
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
@@ -385,6 +388,15 @@
               </div>
             </div>
 
+            <!-- Cloudflare Turnstile invisible widget -->
+            <div class="cf-turnstile"
+                 id="cf-turnstile"
+                 data-sitekey="0x4AAAAAADYTz_60WsG0gKPa"
+                 data-size="invisible"
+                 data-callback="onCfToken"
+                 data-expired-callback="onCfExpired"
+                 data-error-callback="onCfError"></div>
+
             <button type="submit" class="inquiry-submit" id="submitBtn">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               Submit Inquiry
@@ -477,6 +489,17 @@
 
     function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 
+    const FREE_DOMAINS = new Set([
+      'gmail.com','googlemail.com','yahoo.com','yahoo.in','yahoo.co.in','yahoo.co.uk','ymail.com',
+      'hotmail.com','hotmail.in','hotmail.co.uk','outlook.com','outlook.in','live.com','live.in','msn.com',
+      'aol.com','icloud.com','me.com','mac.com','protonmail.com','proton.me','tutanota.com','tuta.io',
+      'rediffmail.com','mail.com','gmx.com','gmx.net','yandex.com','yandex.ru','inbox.com','fastmail.com','hey.com',
+    ]);
+    function isPersonalEmail(e) {
+      const d = e.split('@')[1]?.toLowerCase();
+      return d ? FREE_DOMAINS.has(d) : false;
+    }
+
     function setError(groupId, inputEl, hasError) {
       const g = document.getElementById(groupId);
       if (!g) return;
@@ -484,51 +507,62 @@
       if (inputEl) inputEl.classList.toggle('error', hasError);
     }
 
-    ['fullName','company','email','material','application'].forEach(id => {
+    ['fullName','company','material','application'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.addEventListener('input', () => setError('grp-' + id, el, false));
     });
 
-    document.getElementById('conxForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const get = id => document.getElementById(id);
-      const val = id => get(id) ? get(id).value.trim() : '';
-
-      let ok = true;
-      const checks = [
-        ['fullName', val('fullName')],
-        ['company', val('company')],
-        ['email', val('email') && validateEmail(val('email'))],
-        ['material', val('material')],
-        ['application', val('application')],
-      ];
-      checks.forEach(([id, valid]) => {
-        setError('grp-' + id, get(id), !valid);
-        if (!valid) ok = false;
-      });
-
-      if (!ok) {
-        const first = document.querySelector('.has-error input, .has-error textarea');
-        if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); first.focus(); }
-        return;
+    // Email field: clear error on input, warn on blur if personal email
+    const emailEl = document.getElementById('email');
+    emailEl.addEventListener('input', () => setError('grp-email', emailEl, false));
+    emailEl.addEventListener('blur', () => {
+      const v = emailEl.value.trim();
+      if (!v || !validateEmail(v)) return;
+      if (isPersonalEmail(v)) {
+        document.getElementById('email-error-msg').textContent = 'Please use your company or business email. Free providers (Gmail, Yahoo, etc.) are not accepted.';
+        setError('grp-email', emailEl, true);
       }
+    });
 
+    // Cloudflare Turnstile state
+    let _cfToken = null;
+    let _pendingPayload = null;
+    let _cfTimer = null;
+
+    function _flushPending() {
+      if (_cfTimer) { clearTimeout(_cfTimer); _cfTimer = null; }
+      if (_pendingPayload) {
+        const p = _pendingPayload;
+        _pendingPayload = null;
+        doSubmitPayload(p);
+      }
+    }
+
+    function onCfToken(token) {
+      _cfToken = token;
+      _flushPending();
+    }
+
+    function onCfExpired() {
+      _cfToken = null;
+      try { turnstile.reset(); } catch(_) {}
+    }
+
+    // Called when Turnstile errors (domain not whitelisted, network issue, ad blocker)
+    // Proceed anyway — the API will fall back to Origin-header check
+    function onCfError() {
+      _cfToken = null;
+      _flushPending();
+    }
+
+    const SUBMIT_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    const CLOCK_ICON  = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
+    async function doSubmitPayload(payload) {
       const btn = document.getElementById('submitBtn');
+      const form = document.getElementById('conxForm');
       btn.disabled = true;
-      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Submitting…';
-
-      const payload = {
-        fullName: val('fullName'), company: val('company'),
-        email: val('email'), phone: val('phone'), country: val('country'),
-        material: val('material'), application: val('application'), currentMethod: val('currentMethod'),
-        elements: val('elements'), concentrations: val('concentrations'), accuracy: val('accuracy'),
-        beltWidth: val('beltWidth'), beltSpeed: val('beltSpeed'), materialHeight: val('materialHeight'),
-        installType: val('installType'), tempRange: val('tempRange'), humidity: val('humidity'), dustLevel: val('dustLevel'),
-        outputs: val('outputs'), integration: val('integration'), timeline: val('timeline'),
-        additional: val('additional'),
-      };
-
+      btn.innerHTML = CLOCK_ICON + ' Submitting…';
       try {
         const res = await fetch('/api/con-x-inquiry', {
           method: 'POST',
@@ -539,8 +573,17 @@
         if (res.ok && data.inquiryNo) {
           document.getElementById('inquiryNoDisplay').textContent = data.inquiryNo;
           document.getElementById('successMsg').classList.add('show');
-          this.reset();
+          form.reset();
+          _cfToken = null;
           document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (res.status === 429) {
+          alert('Too many submissions from your network. Please try again later or email us at admin@voctotechnologies.com');
+        } else if (res.status === 400 && data.error && data.error.includes('Security')) {
+          alert('Security verification failed. Please refresh the page and try again.');
+        } else if (res.status === 400 && data.error && data.error.includes('company')) {
+          document.getElementById('email-error-msg').textContent = 'Please use your company or business email. Free providers (Gmail, Yahoo, etc.) are not accepted.';
+          setError('grp-email', document.getElementById('email'), true);
+          document.getElementById('email').scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           alert('Something went wrong. Please email us directly at admin@voctotechnologies.com');
         }
@@ -548,8 +591,79 @@
         alert('Network error. Please email us at admin@voctotechnologies.com or call +91 99941 78734');
       } finally {
         btn.disabled = false;
-        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Inquiry';
+        btn.innerHTML = SUBMIT_ICON + ' Submit Inquiry';
       }
+    }
+
+    document.getElementById('conxForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const get = id => document.getElementById(id);
+      const val = id => get(id) ? get(id).value.trim() : '';
+
+      // Honeypot check (client-side redundancy)
+      if (val('_hp')) return;
+
+      let ok = true;
+      const checks = [
+        ['fullName', val('fullName')],
+        ['company', val('company')],
+        ['material', val('material')],
+        ['application', val('application')],
+      ];
+      checks.forEach(([id, valid]) => {
+        setError('grp-' + id, get(id), !valid);
+        if (!valid) ok = false;
+      });
+
+      // Email: validate format then check for free providers
+      const emailVal = val('email');
+      const emailFormatOk = emailVal && validateEmail(emailVal);
+      const emailIsPersonal = emailFormatOk && isPersonalEmail(emailVal);
+      if (emailIsPersonal) {
+        document.getElementById('email-error-msg').textContent = 'Please use your company or business email. Free providers (Gmail, Yahoo, etc.) are not accepted.';
+      } else {
+        document.getElementById('email-error-msg').textContent = 'Please enter a valid email address.';
+      }
+      setError('grp-email', get('email'), !emailFormatOk || emailIsPersonal);
+      if (!emailFormatOk || emailIsPersonal) ok = false;
+
+      if (!ok) {
+        const first = document.querySelector('.has-error input, .has-error textarea');
+        if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); first.focus(); }
+        return;
+      }
+
+      const payload = {
+        fullName: val('fullName'), company: val('company'),
+        email: val('email'), phone: val('phone'), country: val('country'),
+        material: val('material'), application: val('application'), currentMethod: val('currentMethod'),
+        elements: val('elements'), concentrations: val('concentrations'), accuracy: val('accuracy'),
+        beltWidth: val('beltWidth'), beltSpeed: val('beltSpeed'), materialHeight: val('materialHeight'),
+        installType: val('installType'), tempRange: val('tempRange'), humidity: val('humidity'), dustLevel: val('dustLevel'),
+        outputs: val('outputs'), integration: val('integration'), timeline: val('timeline'),
+        additional: val('additional'),
+        _hp: val('_hp'),
+        _ts: _cfToken,
+      };
+
+      if (!_cfToken) {
+        _pendingPayload = payload;
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerHTML = CLOCK_ICON + ' Verifying…';
+        // Give Turnstile up to 8 seconds; if it doesn't respond, proceed anyway
+        _cfTimer = setTimeout(() => { _cfTimer = null; _flushPending(); }, 8000);
+        try { turnstile.execute('#cf-turnstile'); } catch(_) {
+          // Turnstile script not loaded at all — submit immediately, API uses Origin check
+          clearTimeout(_cfTimer); _cfTimer = null;
+          _pendingPayload = null;
+          doSubmitPayload(payload);
+        }
+        return;
+      }
+
+      doSubmitPayload(payload);
     });
   </script>
 </body>

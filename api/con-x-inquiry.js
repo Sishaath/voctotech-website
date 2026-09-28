@@ -1,5 +1,26 @@
 const https = require('https');
 
+const FREE_EMAIL_DOMAINS = new Set([
+  'gmail.com', 'googlemail.com',
+  'yahoo.com', 'yahoo.in', 'yahoo.co.in', 'yahoo.co.uk', 'ymail.com',
+  'hotmail.com', 'hotmail.in', 'hotmail.co.uk',
+  'outlook.com', 'outlook.in',
+  'live.com', 'live.in', 'msn.com',
+  'aol.com',
+  'icloud.com', 'me.com', 'mac.com',
+  'protonmail.com', 'proton.me',
+  'tutanota.com', 'tuta.io',
+  'rediffmail.com',
+  'mail.com', 'gmx.com', 'gmx.net',
+  'yandex.com', 'yandex.ru',
+  'inbox.com', 'fastmail.com', 'hey.com',
+]);
+
+function isPersonalEmail(email) {
+  const domain = email.split('@')[1]?.toLowerCase();
+  return domain ? FREE_EMAIL_DOMAINS.has(domain) : false;
+}
+
 function resendRequest(payload) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify(payload);
@@ -38,6 +59,87 @@ async function generateInquiryNumber() {
   return `VT-CONX-${yyyymmdd}-${String(seq).padStart(3, '0')}`;
 }
 
+function getClientIP(req) {
+  const fwd = req.headers['x-forwarded-for'];
+  if (fwd) return fwd.split(',')[0].trim();
+  return req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown';
+}
+
+function isFromOurSite(req) {
+  const origin = req.headers['origin'] || '';
+  const referer = req.headers['referer'] || '';
+  return origin.includes('voctotechnologies.com') || referer.includes('voctotechnologies.com');
+}
+
+async function verifyTurnstile(token, ip) {
+  if (!process.env.TURNSTILE_SECRET_KEY) return true; // skip in local dev
+  if (!token) return false;
+  try {
+    const body = new URLSearchParams({
+      secret: process.env.TURNSTILE_SECRET_KEY,
+      response: token,
+      remoteip: ip,
+    });
+    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    });
+    const d = await r.json();
+    return d.success === true;
+  } catch (_) {
+    return false;
+  }
+}
+
+// 1 submission per email address per 24 hours
+async function checkEmailRateLimit(email) {
+  if (!process.env.UPSTASH_REDIS_REST_URL) return true;
+  try {
+    const key = `conx-email-rl:${email.toLowerCase()}`;
+    const r = await fetch(`${process.env.UPSTASH_REDIS_REST_URL}/pipeline`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([
+        ['INCR', key],
+        ['EXPIRE', key, 86400],
+      ]),
+    });
+    const d = await r.json();
+    const count = d[0]?.result;
+    return count <= 1;
+  } catch (_) {
+    return true;
+  }
+}
+
+// Max 5 submissions per IP per hour using existing Upstash Redis
+async function checkRateLimit(ip) {
+  if (!process.env.UPSTASH_REDIS_REST_URL) return true;
+  try {
+    const key = `conx-rl:${ip}`;
+    const r = await fetch(`${process.env.UPSTASH_REDIS_REST_URL}/pipeline`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([
+        ['INCR', key],
+        ['EXPIRE', key, 3600],
+      ]),
+    });
+    const d = await r.json();
+    const count = d[0]?.result;
+    return count <= 5;
+  } catch (_) {
+    return true; // allow through if Redis errors
+  }
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -51,10 +153,45 @@ module.exports = async function handler(req, res) {
     installType, tempRange, humidity, dustLevel,
     outputs, integration, timeline,
     additional,
+    _hp,
+    _ts,
   } = req.body;
+
+  // Layer 1: Honeypot — silently fake-succeed so bots think they won
+  if (_hp) {
+    return res.status(200).json({ success: true, inquiryNo: 'VT-CONX-BOT-000' });
+  }
 
   if (!fullName || !company || !email || !material || !application) {
     return res.status(400).json({ error: 'Required fields missing' });
+  }
+
+  // Layer 2: Block free/personal email providers
+  if (isPersonalEmail(email)) {
+    return res.status(400).json({ error: 'Please use your company or business email address.' });
+  }
+
+  const ip = getClientIP(req);
+
+  // Layer 3: Cloudflare Turnstile verification
+  // If Turnstile fails but the request came from our site (browser user), allow through —
+  // the other layers (honeypot, email domain, rate limiting) still protect us.
+  // Direct API callers with no valid Origin are blocked regardless.
+  const turnstileOk = await verifyTurnstile(_ts, ip);
+  if (!turnstileOk && !isFromOurSite(req)) {
+    return res.status(400).json({ error: 'Security check failed. Please refresh and try again.' });
+  }
+
+  // Layer 4: Rate limit — 5 per IP per hour
+  const withinLimit = await checkRateLimit(ip);
+  if (!withinLimit) {
+    return res.status(429).json({ error: 'Too many submissions from this network. Please try again later.' });
+  }
+
+  // Layer 5: Rate limit — 1 per email per 24 hours
+  const emailAllowed = await checkEmailRateLimit(email);
+  if (!emailAllowed) {
+    return res.status(429).json({ error: 'An inquiry from this email was already submitted today. Please contact us directly at admin@voctotechnologies.com if you need to update your inquiry.' });
   }
 
   const inquiryNo = await generateInquiryNumber();
