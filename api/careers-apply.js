@@ -218,7 +218,7 @@ module.exports = async function handler(req, res) {
       <p style="color:#5A6A82;margin:8px 0 0;font-size:12px;">Please quote this number in all correspondence</p>
     </div>
 
-    <p>Our team will review your application and get back to you within <strong>5 business days</strong>.</p>
+    <p>Our team will review your application and get back to you.</p>
 
     <p>For questions about your application, contact us at:</p>
     <p><strong>career@voctotechnologies.com</strong></p>
