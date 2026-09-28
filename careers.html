@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     .job-grid {
       display: grid;
@@ -88,6 +89,37 @@
       align-self: center;
     }
     .job-apply-btn:hover { background: var(--navy-mid); transform: translateY(-2px); }
+
+    .job-details { margin-top: 16px; }
+    .job-details summary {
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cyan-dark);
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .job-details summary::-webkit-details-marker { display: none; }
+    .job-details summary::after {
+      content: '▾';
+      transition: transform var(--transition);
+    }
+    .job-details[open] summary::after { transform: rotate(180deg); }
+    .job-details-body {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .job-details-body h4 { font-family: var(--font-head); font-size: 15px; color: var(--navy); margin: 20px 0 8px; }
+    .job-details-body h4:first-child { margin-top: 0; }
+    .job-details-body ul { margin: 0 0 4px; padding-left: 20px; }
+    .job-details-body li { margin-bottom: 6px; }
+    .job-details-body p { margin: 0 0 12px; }
 
     .no-openings {
       text-align: center;
@@ -221,9 +253,9 @@
   <!-- TOP INFO BAR -->
   <div class="top-bar">
     <div class="container">
-      <a href="mailto:admin@voctotechnologies.com" aria-label="Email admin">
+      <a href="mailto:career@voctotechnologies.com" aria-label="Email careers">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        admin@voctotechnologies.com
+        career@voctotechnologies.com
       </a>
     </div>
   </div>
@@ -340,10 +372,203 @@
              Also remove the .no-openings block below when openings exist.
              ============================================================ -->
 
-        <div class="no-openings">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <h3>No Open Positions Right Now</h3>
-          <p>We do not have any active openings at the moment. Check back soon, or reach out to us directly if you believe you would be a great fit for our team.</p>
+        <div class="job-card" data-position="Administration &amp; Operations Executive">
+          <div class="job-info">
+            <div class="job-dept">Administration &amp; Operations</div>
+            <div class="job-title">Administration &amp; Operations Executive</div>
+            <p class="job-desc">Support the day-to-day administrative and operational activities of the company &mdash; maintaining records and documentation, managing data, coordinating internal requirements, and supporting employee-related activities.</p>
+            <div class="job-tags">
+              <span class="job-tag location">Chennai, Tamil Nadu</span>
+              <span class="job-tag type">Full-time</span>
+              <span class="job-tag">0&ndash;2 years</span>
+            </div>
+
+            <details class="job-details">
+              <summary>View full job description</summary>
+              <div class="job-details-body">
+                <h4>About the Role</h4>
+                <p>We are looking for a <strong>detail-oriented and organized Administration &amp; Operations Executive</strong> to support the day-to-day administrative and operational activities of the company.</p>
+                <p>The role will involve maintaining company records and documentation, managing data, coordinating internal requirements, and supporting various administrative and employee-related activities.</p>
+
+                <h4>Key Responsibilities</h4>
+                <ul>
+                  <li>Maintain and organize company records, files, documents, and databases.</li>
+                  <li>Manage and update employee and administrative records.</li>
+                  <li>Handle data entry, documentation, filing, and record maintenance.</li>
+                  <li>Prepare and maintain reports, trackers, registers, and other administrative documents.</li>
+                  <li>Coordinate with different departments for day-to-day administrative requirements.</li>
+                  <li>Assist with employee onboarding documentation and basic HR-related administrative activities.</li>
+                  <li>Maintain attendance, leave, and other employee-related records.</li>
+                  <li>Coordinate internal communications and follow up on pending administrative tasks.</li>
+                  <li>Assist with office administration and vendor coordination.</li>
+                  <li>Ensure important documents and information are properly maintained and easily accessible.</li>
+                  <li>Support management with day-to-day administrative and coordination activities.</li>
+                  <li>Maintain confidentiality of company and employee information.</li>
+                </ul>
+
+                <h4>Requirements</h4>
+                <ul>
+                  <li>Bachelor's degree in any discipline.</li>
+                  <li><strong>0&ndash;2 years of experience</strong> in administration, operations, HR support, or a similar role.</li>
+                  <li>Freshers with good organizational and communication skills are welcome to apply.</li>
+                  <li>Good working knowledge of <strong>MS Office / Google Workspace</strong>, particularly Excel/Google Sheets and Word/Google Docs.</li>
+                  <li>Strong organizational and documentation skills.</li>
+                  <li>Good written and verbal communication skills.</li>
+                  <li>Strong attention to detail and ability to maintain accurate records.</li>
+                  <li>Ability to manage multiple tasks and follow up independently.</li>
+                  <li>Basic understanding of HR and office administration processes is an advantage.</li>
+                </ul>
+
+                <h4>What We're Looking For</h4>
+                <p>A responsible and organized individual who can take ownership of administrative tasks, maintain accurate records, coordinate effectively with teams, and support the smooth functioning of day-to-day company operations.</p>
+              </div>
+            </details>
+          </div>
+          <a href="#apply" class="job-apply-btn" onclick="selectRole('Administration &amp; Operations Executive')">
+            Apply Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="job-card" data-position="Office &amp; Administrative Assistant">
+          <div class="job-info">
+            <div class="job-dept">Office Administration</div>
+            <div class="job-title">Office &amp; Administrative Assistant</div>
+            <p class="job-desc">Support day-to-day office activities &mdash; documentation, dispatches, courier and vendor coordination, and routine administrative errands.</p>
+            <div class="job-tags">
+              <span class="job-tag location">Chennai, Tamil Nadu</span>
+              <span class="job-tag type">Full-time</span>
+              <span class="job-tag">0&ndash;2 years</span>
+            </div>
+
+            <details class="job-details">
+              <summary>View full job description</summary>
+              <div class="job-details-body">
+                <h4>About the Role</h4>
+                <p>We are looking for a responsible, reliable, and organized <strong>Office &amp; Administrative Assistant</strong> to support the day-to-day activities of our office.</p>
+                <p>The role involves handling routine office tasks, assisting with documentation and coordination, supporting employees and management, and ensuring the smooth functioning of daily office activities.</p>
+
+                <h4>Key Responsibilities</h4>
+                <ul>
+                  <li>Handle day-to-day office and administrative activities.</li>
+                  <li>Assist with maintaining and organizing office files, documents, and records.</li>
+                  <li>Handle photocopying, printing, scanning, filing, and basic documentation work.</li>
+                  <li>Assist with dispatches, courier services, deliveries, and collection of documents or materials.</li>
+                  <li>Purchase and arrange routine office supplies and other required items.</li>
+                  <li>Assist with bank, post office, courier, vendor, and other routine external work when required.</li>
+                  <li>Support employees and management with day-to-day administrative requirements.</li>
+                  <li>Maintain basic office registers, records, and inventories.</li>
+                  <li>Assist in keeping the office organized and ensure necessary supplies are available.</li>
+                  <li>Coordinate with vendors and service providers for routine office requirements.</li>
+                  <li>Handle other general office support and errands as assigned by management.</li>
+                </ul>
+
+                <h4>Requirements</h4>
+                <ul>
+                  <li>Minimum 12th standard qualification; diploma or bachelor's degree is an advantage.</li>
+                  <li>0&ndash;2 years of experience in office administration, office assistance, or a similar role.</li>
+                  <li>Freshers with a responsible attitude are welcome to apply.</li>
+                  <li>Good communication skills and a willingness to learn.</li>
+                  <li>Ability to handle routine tasks responsibly and independently.</li>
+                  <li>Basic knowledge of computers, email, MS Office/Google Workspace, and printing/scanning.</li>
+                  <li>Should be punctual, dependable, and comfortable handling practical day-to-day tasks.</li>
+                  <li><strong>Candidates with a valid two-wheeler and driving licence will be preferred.</strong></li>
+                  <li>Willingness to travel locally within Chennai for official work when required.</li>
+                </ul>
+
+                <h4>Preferred Qualities</h4>
+                <ul>
+                  <li>Responsible and trustworthy</li>
+                  <li>Good time management</li>
+                  <li>Willingness to take ownership of assigned tasks</li>
+                  <li>Ability to coordinate with different people</li>
+                  <li>Practical and problem-solving attitude</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <a href="#apply" class="job-apply-btn" onclick="selectRole('Office &amp; Administrative Assistant')">
+            Apply Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="job-card" data-position="Prototype Assembly &amp; Mechanical Technician">
+          <div class="job-info">
+            <div class="job-dept">Engineering &amp; Prototype Development</div>
+            <div class="job-title">Prototype Assembly &amp; Mechanical Technician</div>
+            <p class="job-desc">Support assembly, installation, and testing of prototype equipment and optical test instruments, working with mechanical components and hardware.</p>
+            <div class="job-tags">
+              <span class="job-tag location">Chennai, Tamil Nadu</span>
+              <span class="job-tag type">Full-time</span>
+              <span class="job-tag">0&ndash;3 years</span>
+            </div>
+
+            <details class="job-details">
+              <summary>View full job description</summary>
+              <div class="job-details-body">
+                <h4>About the Role</h4>
+                <p>We are looking for a hands-on and technically oriented <strong>Prototype Assembly &amp; Mechanical Technician</strong> to support the development, assembly, installation, and testing of prototype equipment and optical test instruments.</p>
+                <p>The role will involve working with mechanical components such as plates, brackets, nuts, bolts, fasteners, mounts, fixtures, and other hardware used in prototype assemblies.</p>
+                <p>The candidate will work closely with the engineering and development team to assemble prototypes, perform basic mechanical adjustments, assist with installations, and ensure that assemblies are completed accurately according to drawings and instructions.</p>
+
+                <h4>Key Responsibilities</h4>
+                <ul>
+                  <li>Assist in the assembly and installation of prototype equipment and test instruments.</li>
+                  <li>Assemble mechanical components including plates, brackets, mounts, fasteners, nuts, bolts, and related hardware.</li>
+                  <li>Perform basic mechanical fitting, alignment, adjustment, and installation activities.</li>
+                  <li>Read and understand basic mechanical drawings, assembly drawings, dimensions, and instructions.</li>
+                  <li>Use basic hand tools and workshop tools safely and effectively.</li>
+                  <li>Assist engineers during prototype development, assembly, modification, and testing.</li>
+                  <li>Perform basic measurements and dimensional checks during assembly.</li>
+                  <li>Identify loose fittings, alignment issues, mechanical defects, and other assembly problems.</li>
+                  <li>Assist with disassembly, modification, and reassembly of prototypes when required.</li>
+                  <li>Maintain tools, components, and assembly materials in an organized manner.</li>
+                  <li>Support installation and setup of prototype equipment at the company or customer location when required.</li>
+                  <li>Maintain basic assembly records and documentation.</li>
+                  <li>Follow engineering instructions, safety procedures, and quality requirements.</li>
+                  <li>Carry out other technical and mechanical support activities related to prototype development.</li>
+                </ul>
+
+                <h4>Requirements</h4>
+                <ul>
+                  <li>ITI / Diploma in <strong>Mechanical Engineering, Fitter, Machinist, or a related technical field</strong> is preferred.</li>
+                  <li>Candidates with relevant hands-on mechanical assembly experience may also be considered.</li>
+                  <li>0&ndash;3 years of experience in mechanical assembly, fabrication, machine assembly, installation, maintenance, or a similar role.</li>
+                  <li>Freshers with relevant ITI/Diploma qualifications and strong practical skills are welcome.</li>
+                  <li>Basic understanding of mechanical components, fasteners, fittings, and assembly techniques.</li>
+                  <li>Ability to use basic hand tools and measuring instruments.</li>
+                  <li>Ability to understand basic mechanical drawings and dimensions.</li>
+                  <li>Good attention to detail and ability to follow technical instructions.</li>
+                  <li>Willingness to work hands-on with prototype equipment and components.</li>
+                  <li>Ability to work as part of an engineering and prototype development team.</li>
+                </ul>
+
+                <h4>Preferred Skills</h4>
+                <ul>
+                  <li>Experience with mechanical assembly or prototype development.</li>
+                  <li>Basic knowledge of drilling, tapping, fitting, fastening, and alignment.</li>
+                  <li>Familiarity with tools such as vernier calipers, screwdrivers, spanners, Allen keys, drills, and other workshop tools.</li>
+                  <li>Basic knowledge of CAD drawings or mechanical drawings is an advantage.</li>
+                  <li>Experience working with precision instruments or optical/mechanical equipment is an advantage.</li>
+                </ul>
+
+                <h4>Preferred Qualities</h4>
+                <ul>
+                  <li>Strong hands-on and practical approach</li>
+                  <li>Attention to detail</li>
+                  <li>Willingness to learn</li>
+                  <li>Ability to troubleshoot basic mechanical issues</li>
+                  <li>Good workmanship and discipline</li>
+                  <li>Ability to follow technical instructions accurately</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <a href="#apply" class="job-apply-btn" onclick="selectRole('Prototype Assembly &amp; Mechanical Technician')">
+            Apply Now
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
 
       </div>
@@ -384,9 +609,9 @@
                 <label for="fposition">Position Applying For <span class="req">*</span></label>
                 <select id="fposition" name="fposition">
                   <option value="" disabled selected>Select a role</option>
-                  <option value="Electronics Design Engineer">Electronics Design Engineer</option>
-                  <option value="Manufacturing Technician">Manufacturing Technician - SMT / PCB Assembly</option>
-                  <option value="Business Development Executive">Business Development Executive</option>
+                  <option value="Administration &amp; Operations Executive">Administration &amp; Operations Executive</option>
+                  <option value="Office &amp; Administrative Assistant">Office &amp; Administrative Assistant</option>
+                  <option value="Prototype Assembly &amp; Mechanical Technician">Prototype Assembly &amp; Mechanical Technician</option>
                   <option value="General Application">General Application (No specific role)</option>
                 </select>
                 <span class="error-msg">Please select a position.</span>
@@ -412,14 +637,26 @@
               <span class="error-msg">Please write a brief cover note.</span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="grp-fresume">
               <label for="fresume">Resume / CV <span class="req">*</span></label>
               <input type="file" id="fresume" name="fresume" accept=".pdf,.doc,.docx" />
-              <span class="file-hint">PDF, DOC or DOCX. Max 5 MB. We will contact you within 5 business days.</span>
+              <span class="error-msg">Please attach your resume (PDF, DOC or DOCX, max 2 MB).</span>
+              <span class="file-hint">PDF, DOC or DOCX. Max 2 MB. We will contact you within 5 business days.</span>
             </div>
 
-            <button type="submit" class="apply-submit" id="applyBtn" disabled>
-              Applications Currently Closed
+            <input type="text" name="_hp" id="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;pointer-events:none;" />
+
+            <div class="cf-turnstile"
+                 id="cf-turnstile"
+                 data-sitekey="0x4AAAAAADYTz_60WsG0gKPa"
+                 data-size="invisible"
+                 data-callback="onCfToken"
+                 data-expired-callback="onCfExpired"
+                 data-error-callback="onCfError"></div>
+
+            <button type="submit" class="apply-submit" id="applyBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Application
             </button>
 
             <div class="apply-success" id="applySuccess">
@@ -442,7 +679,7 @@
           </div>
           <p class="footer-tagline">Building Visions, Shaping The Future. Precision electronics and photonics manufacturing, engineering design, and cloud services for global technology leaders.</p>
           <div class="footer-socials">
-            <a href="mailto:admin@voctotechnologies.com" class="social-link" aria-label="Email">
+            <a href="mailto:career@voctotechnologies.com" class="social-link" aria-label="Email">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
           </div>
@@ -471,7 +708,7 @@
           <h4>Contact</h4>
           <div class="footer-contact-item">
             <div class="footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div class="footer-contact-text"><strong>Email</strong>admin@voctotechnologies.com</div>
+            <div class="footer-contact-text"><strong>Email</strong>career@voctotechnologies.com</div>
           </div>
         </div>
       </div>
@@ -513,17 +750,138 @@
     const applyForm = document.getElementById('applyForm');
     const applySuccess = document.getElementById('applySuccess');
     const applyBtn = document.getElementById('applyBtn');
+    const MAX_RESUME_BYTES = 2 * 1024 * 1024; // 2 MB — keeps base64 payload under Vercel's request body limit
 
     function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
     function setErr(id, el, has) {
       const g = document.getElementById(id);
       if (!g) return;
       g.classList.toggle('has-error', has);
-      el.classList.toggle('error', has);
+      if (el) el.classList.toggle('error', has);
+    }
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    const SUBMIT_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    const CLOCK_ICON  = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+
+    // Cloudflare Turnstile state
+    let _cfToken = null;
+    let _pendingSubmit = null;
+    let _cfTimer = null;
+
+    function _flushPending() {
+      if (_cfTimer) { clearTimeout(_cfTimer); _cfTimer = null; }
+      if (_pendingSubmit) {
+        const fn = _pendingSubmit;
+        _pendingSubmit = null;
+        fn();
+      }
+    }
+    function onCfToken(token) { _cfToken = token; _flushPending(); }
+    function onCfExpired() { _cfToken = null; try { turnstile.reset(); } catch(_) {} }
+    function onCfError() { _cfToken = null; _flushPending(); }
+
+    async function doSubmit() {
+      applyBtn.disabled = true;
+      applyBtn.innerHTML = CLOCK_ICON + ' Submitting…';
+      try {
+        const resumeFile = document.getElementById('fresume').files[0];
+        const resumeBase64 = await fileToBase64(resumeFile);
+
+        const payload = {
+          fname: document.getElementById('fname').value.trim(),
+          femail: document.getElementById('femail').value.trim(),
+          fphone: document.getElementById('fphone').value.trim(),
+          fposition: document.getElementById('fposition').value,
+          fexp: document.getElementById('fexp').value,
+          fcover: document.getElementById('fcover').value.trim(),
+          resumeName: resumeFile.name,
+          resumeType: resumeFile.type,
+          resumeBase64,
+          _hp: document.getElementById('_hp').value,
+          _ts: _cfToken,
+        };
+
+        const res = await fetch('/api/careers-apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          applySuccess.classList.add('show');
+          applyForm.reset();
+          _cfToken = null;
+          applySuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else if (res.status === 429) {
+          alert('Too many submissions from your network. Please try again later or email your resume directly to career@voctotechnologies.com');
+        } else if (res.status === 400 && data.error && data.error.includes('Security')) {
+          alert('Security verification failed. Please refresh the page and try again.');
+        } else {
+          alert('Something went wrong. Please email your resume directly to career@voctotechnologies.com');
+        }
+      } catch (err) {
+        alert('Network error. Please email your resume to career@voctotechnologies.com');
+      } finally {
+        applyBtn.disabled = false;
+        applyBtn.innerHTML = SUBMIT_ICON + ' Submit Application';
+      }
     }
 
     applyForm.addEventListener('submit', function(e) {
       e.preventDefault();
+
+      const fname = document.getElementById('fname');
+      const femail = document.getElementById('femail');
+      const fphone = document.getElementById('fphone');
+      const fposition = document.getElementById('fposition');
+      const fexp = document.getElementById('fexp');
+      const fcover = document.getElementById('fcover');
+      const fresume = document.getElementById('fresume');
+      let hasErrors = false;
+
+      if (!fname.value.trim()) { setErr('grp-fname', fname, true); hasErrors = true; } else { setErr('grp-fname', fname, false); }
+      if (!femail.value.trim() || !validateEmail(femail.value)) { setErr('grp-femail', femail, true); hasErrors = true; } else { setErr('grp-femail', femail, false); }
+      if (!fphone.value.trim()) { setErr('grp-fphone', fphone, true); hasErrors = true; } else { setErr('grp-fphone', fphone, false); }
+      if (!fposition.value) { setErr('grp-fposition', fposition, true); hasErrors = true; } else { setErr('grp-fposition', fposition, false); }
+      if (!fexp.value) { setErr('grp-fexp', fexp, true); hasErrors = true; } else { setErr('grp-fexp', fexp, false); }
+      if (!fcover.value.trim()) { setErr('grp-fcover', fcover, true); hasErrors = true; } else { setErr('grp-fcover', fcover, false); }
+
+      const resumeFile = fresume.files[0];
+      if (!resumeFile || resumeFile.size > MAX_RESUME_BYTES) { setErr('grp-fresume', fresume, true); hasErrors = true; } else { setErr('grp-fresume', fresume, false); }
+
+      if (hasErrors) {
+        applyForm.querySelector('.has-error input, .has-error select, .has-error textarea')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Honeypot check (client-side redundancy)
+      if (document.getElementById('_hp').value) return;
+
+      if (!_cfToken) {
+        _pendingSubmit = doSubmit;
+        applyBtn.disabled = true;
+        applyBtn.innerHTML = CLOCK_ICON + ' Verifying…';
+        // Give Turnstile up to 8 seconds; if it doesn't respond, proceed anyway
+        _cfTimer = setTimeout(() => { _cfTimer = null; _flushPending(); }, 8000);
+        try { turnstile.execute('#cf-turnstile'); } catch(_) {
+          // Turnstile script not loaded at all — submit immediately, API uses Origin check
+          clearTimeout(_cfTimer); _cfTimer = null;
+          _pendingSubmit = null;
+          doSubmit();
+        }
+        return;
+      }
+
+      doSubmit();
     });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
