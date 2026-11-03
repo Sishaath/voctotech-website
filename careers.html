@@ -106,6 +106,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      min-height: 44px;
     }
     .job-details summary::-webkit-details-marker { display: none; }
     .job-details summary::after {
@@ -214,6 +215,10 @@
     }
     .apply-success.show { display: block; }
 
+    /* 16px stops iOS zooming into the page when a field is focused */
+    @media (pointer: coarse) {
+      .form-group input, .form-group select, .form-group textarea { font-size: 16px; }
+    }
     @media (max-width: 768px) {
       .job-card { flex-direction: column; }
       .job-apply-btn { width: 100%; justify-content: center; }

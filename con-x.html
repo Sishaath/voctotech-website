@@ -508,10 +508,15 @@
     .cx-mobile-bar.is-hidden { transform: translateY(110%); }
 
     /* ---------- Responsive ---------- */
+    @media (pointer: coarse) {
+      .cx-link { padding-block: 9px; }
+      .cx-subnav a { padding-block: 12px; }
+    }
     @media (max-width: 960px) {
       .cx-hero-inner, .cx-how, .cx-enquire-inner { grid-template-columns: 1fr; gap: 40px; }
       .cx-hero-inner { padding-block: 48px 64px; }
       .cx-hero-media { order: -1; }
+      .cx-hero-media { aspect-ratio: 16 / 9; max-height: 60vh; width: 100%; }
       .cx-benefits, .cx-apps, .cx-papers { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
@@ -895,7 +900,7 @@
   </main>
 
   <!-- STICKY MOBILE ACTION BAR -->
-  <div class="cx-mobile-bar" id="cxMobileBar">
+  <div class="cx-mobile-bar is-hidden" id="cxMobileBar">
     <a href="#enquire" class="cx-btn" data-cta="mobile-bar">Submit an Enquiry</a>
   </div>
 
@@ -982,10 +987,17 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(s => s && spy.observe(s));
 
-    // ---- Mobile action bar: hide while the form is on screen ----
+    // ---- Mobile action bar: hide while the hero buttons or the form are on screen ----
     const bar = document.getElementById('cxMobileBar');
-    new IntersectionObserver(([e]) => bar.classList.toggle('is-hidden', e.isIntersecting), { threshold: 0.15 })
-      .observe(document.getElementById('enquire'));
+    const barBlockers = new Set();
+    new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting ? barBlockers.add(e.target) : barBlockers.delete(e.target));
+      bar.classList.toggle('is-hidden', barBlockers.size > 0);
+    }, { threshold: 0.15 }).observe(document.getElementById('enquire'));
+    new IntersectionObserver(([e]) => {
+      e.isIntersecting ? barBlockers.add(e.target) : barBlockers.delete(e.target);
+      bar.classList.toggle('is-hidden', barBlockers.size > 0);
+    }).observe(document.querySelector('.cx-hero-actions'));
 
     // ---- CTAs: every "Submit an Enquiry" scrolls to the form and focuses the first field ----
     document.querySelectorAll('[data-cta]').forEach(a => a.addEventListener('click', e => {

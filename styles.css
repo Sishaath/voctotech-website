@@ -64,6 +64,10 @@ a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 button, input, textarea, select { font-family: inherit; }
 p { text-align: justify; }
+/* Justified text leaves wide word gaps on narrow screens */
+@media (max-width: 1024px) {
+  p { text-align: left; }
+}
 
 /* --- Container --- */
 .container {
@@ -236,9 +240,15 @@ p { text-align: justify; }
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
-  padding: 8px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
   border-radius: var(--radius-sm);
   transition: background var(--transition);
 }
@@ -788,10 +798,11 @@ h2.section-title.light { color: var(--white); }
   box-shadow: 0 8px 28px rgba(0,0,0,0.25);
   animation: none;
 }
+/* the source image is square with wide margins; crop to the logo */
 .bsi-logo-img {
-  height: 28px;
-  width: auto;
-  object-fit: contain;
+  height: 30px;
+  width: 64px;
+  object-fit: cover;
 }
 
 .marquee-section {
@@ -3025,6 +3036,21 @@ h2.section-title.light { color: var(--white); }
   background: var(--navy);
   color: var(--white);
 }
+/* The full menu needs ~1170px; below that use the hamburger */
+@media (max-width: 1199px) {
+  .nav-links { display: none; }
+  .btn-nav-cta.desktop-only,
+  .btn-portal.desktop-only { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 400px) {
+  .btn { white-space: normal; max-width: 100%; padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 360px) {
+  .navbar-inner { gap: 12px; }
+  .logo-img { height: 52px; }
+  .logo-text { font-size: 16px; }
+}
 
 /* ── Business Lines Grid ───────────────────────────────── */
 .biz-grid {
@@ -3233,4 +3259,47 @@ h2.section-title.light { color: var(--white); }
 
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; transition: none; }
+}
+
+/* =========================================================
+   MOBILE POLISH
+   ========================================================= */
+/* Touch screens of any width (phones in landscape, tablets) */
+@media (pointer: coarse) {
+  /* 16px stops iOS zooming into the page when a field is focused */
+  .form-group input,
+  .form-group select,
+  .form-group textarea { font-size: 16px; }
+
+  .footer-links { gap: 0; }
+  .footer-links a,
+  .footer-contact-text a { display: inline-block; padding: 9px 0; }
+  .social-link { width: 44px; height: 44px; }
+  .office-detail a { display: inline-block; padding: 10px 0; }
+  .bsi-cta { padding: 11px 22px; }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding-top: 56px; padding-bottom: 48px; }
+  .service-cta-strip { padding: 56px 0; }
+
+  /* Footer: link columns side by side */
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .footer-grid > .footer-col:first-child,
+  .footer-grid > .footer-col:last-child { grid-column: 1 / -1; }
+
+  /* Official distributor band: stacked and centred */
+  .bsi-banner { padding: 18px 0 20px; }
+  .bsi-banner-inner { flex-direction: column; gap: 12px; padding: 0 16px; text-align: center; }
+  .bsi-official { font-size: 11px; }
+  .bsi-logo-img { height: 38px; width: 80px; }
+  .bsi-desc { text-align: center; min-width: 0; font-size: 14px; }
+
+  /* inline padding on the home testimonial is sized for desktop */
+  .testimonial-card { padding: 40px 24px 32px !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons { align-items: stretch; }
+  .hero-buttons .btn { justify-content: center; width: 100%; }
 }
