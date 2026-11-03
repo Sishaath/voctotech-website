@@ -143,8 +143,8 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 56px;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
       align-items: center;
       padding-block: 88px 96px;
     }
@@ -166,9 +166,10 @@
       margin-bottom: 32px;
       max-width: 560px;
     }
-    .cx-hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .cx-hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .cx-hero-actions .cx-btn { padding: 12px 18px; min-height: 48px; font-size: 15px; }
+    .cx-hero-actions .cx-link { margin-left: 6px; }
     .cx-hero .cx-link { color: var(--white); }
-    .cx-hero-brochure { margin-top: 16px; }
     .cx-btn-outline { background: transparent; color: var(--white); box-shadow: inset 0 0 0 2px var(--cyan); }
     .cx-btn-outline:hover { background: rgba(0,194,255,0.12); }
     .cx-hero .cx-link:hover { color: var(--cyan); }
@@ -184,7 +185,7 @@
       color: rgba(255,255,255,0.65);
       max-width: 560px;
     }
-    .cx-trust img { width: 44px; height: 44px; border-radius: 8px; background: #fff; padding: 4px; flex-shrink: 0; }
+    .cx-trust img { width: 160px; height: 76px; object-fit: cover; border-radius: 10px; background: #fff; padding: 6px 10px; flex-shrink: 0; }
     .cx-hero-media {
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -303,6 +304,10 @@
       border-radius: var(--radius-md);
     }
     .cx-visuals figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 10px; }
+    .cx-visuals .cx-diagram figcaption { color: rgba(255,255,255,0.6); }
+    .cx-how-photo { margin: 0; }
+    .cx-how-photo img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: var(--radius-lg); }
+    .cx-how-photo figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 10px; }
     .cx-placeholder {
       border: 2px dashed var(--border);
       background: var(--light-bg);
@@ -486,8 +491,6 @@
     .cx-success p { color: var(--text-muted); text-align: center; line-height: 1.6; }
 
     /* ---------- Closing CTA ---------- */
-    .cx-closing { text-align: center; }
-    .cx-closing .cx-intro { margin: 0 auto 32px; text-align: center; }
 
     /* ---------- Sticky mobile action bar ---------- */
     .cx-mobile-bar {
@@ -593,19 +596,17 @@
           <p class="cx-hero-text">CON-X provides continuous, non-contact and non-nuclear elemental analysis of material moving on a conveyor belt, helping mining and mineral-processing operations monitor grade variation and make more informed blending, beneficiation, and process-control decisions.</p>
           <div class="cx-hero-actions">
             <a href="#enquire" class="cx-btn" data-cta="hero">Submit an Enquiry</a>
+            <a href="/con-x-brochure.pdf" class="cx-btn cx-btn-outline" target="_blank" rel="noopener" data-track="brochure">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure
+            </a>
             <a href="#research" class="cx-link">
               Check Out Research Papers
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
             </a>
           </div>
-          <div class="cx-hero-brochure">
-            <a href="/con-x-brochure.pdf" class="cx-btn cx-btn-outline" target="_blank" rel="noopener" data-track="brochure">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Brochure (PDF)
-            </a>
-          </div>
           <div class="cx-trust">
-            <img src="bsi-logo.png" alt="" width="44" height="44" />
+            <img src="bsi-logo.png" alt="Baltic Scientific Instruments" width="160" height="76" />
             <span>Designed and manufactured by Baltic Scientific Instruments, Latvia. Distributed and supported through an international partner network.</span>
           </div>
         </div>
@@ -683,6 +684,14 @@
             </li>
           </ol>
 
+          <figure class="cx-how-photo">
+            <img src="con-x-install.jpg" width="1000" height="750" loading="lazy"
+                 alt="Close-up of the CON-X analyzer housing mounted on a steel frame above a loaded conveyor belt" />
+            <figcaption>CON-X installed over a production conveyor.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cx-visuals cx-visuals-single">
           <figure class="cx-diagram">
             <svg viewBox="0 0 520 300" role="img" aria-labelledby="cxDiagTitle">
               <title id="cxDiagTitle">Diagram: the CON-X head sits above the conveyor, X-rays excite the moving material, the detector reads the fluorescence, and results go to the plant control system.</title>
@@ -715,14 +724,6 @@
             </svg>
             <figcaption>Simplified schematic. Not to scale.</figcaption>
           </figure>
-        </div>
-
-        <div class="cx-visuals cx-visuals-single">
-          <figure>
-            <img src="con-x-install.jpg" width="1000" height="750" loading="lazy"
-                 alt="Close-up of the CON-X analyzer housing mounted on a steel frame above a loaded conveyor belt" />
-            <figcaption>CON-X installed over a production conveyor.</figcaption>
-          </figure>
           <!-- TODO: add a second <figure> with the CON-X software / spectrum screenshot from BSI (grid reverts to two columns) -->
         </div>
       </div>
@@ -743,9 +744,6 @@
           <div class="cx-app"><h3>Base-Metal Ores</h3><p>Evaluate suitable applications involving copper, zinc, and other base-metal ores.</p></div>
           <div class="cx-app"><h3>Industrial Sand</h3><p>Assess selected impurity-monitoring applications, including iron content in industrial sand.</p></div>
           <div class="cx-app"><h3>Slag and Metallurgical Materials</h3><p>Evaluate suitable applications for slag and other metallurgical bulk materials.</p></div>
-        </div>
-        <div class="cx-cta-row">
-          <a href="#enquire" class="cx-btn" data-cta="applications">Submit an Enquiry</a>
         </div>
       </div>
     </section>
@@ -773,7 +771,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Product Brochure (PDF)
           </a>
-          <a href="#enquire" class="cx-btn" data-cta="technical">Submit an Enquiry</a>
         </div>
       </div>
     </section>
@@ -788,31 +785,31 @@
         </div>
         <div class="cx-papers">
           <article class="cx-paper">
-            <div class="cx-paper-source">MDPI · Mining · Vol. 5</div>
-            <h3>On-line XRF Analysis in Mining &amp; Mineral Processing</h3>
-            <p>Published research on on-line XRF analysis in mining and mineral-processing applications.</p>
+            <div class="cx-paper-source">Journal Article · MDPI Mining · 2025</div>
+            <h3>Online XRF Analysis of Elements in Minerals on a Conveyor Belt</h3>
+            <p>Mining, Vol. 5, Issue 4. On-line XRF measurement of elements in minerals moving on a conveyor belt.</p>
             <a class="cx-link" href="https://www.mdpi.com/2673-6489/5/4/77" target="_blank" rel="noopener" data-track="paper" data-paper="mining-mineral-processing">
-              Read Published Paper
+              Read Journal Article
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span class="sr-only">(opens in a new tab)</span>
             </a>
           </article>
           <article class="cx-paper">
-            <div class="cx-paper-source">MDPI · Mining · Vol. 6</div>
-            <h3>On-line XRF Analysis of Rare Earth Elements</h3>
-            <p>Research into on-line XRF analysis for rare earth elements and related measurement considerations.</p>
+            <div class="cx-paper-source">Journal Article · MDPI Mining · 2026</div>
+            <h3>Towards Implementation of Online XRF Analysis of Rare Earth Elements and Heavy Metals on Conveyor Belts</h3>
+            <p>Mining, Vol. 6, Issue 2. On-line XRF analysis of rare earth elements and heavy metals on conveyor belts.</p>
             <a class="cx-link" href="https://www.mdpi.com/2673-6489/6/2/39" target="_blank" rel="noopener" data-track="paper" data-paper="rare-earth-elements">
-              Read Published Paper
+              Read Journal Article
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span class="sr-only">(opens in a new tab)</span>
             </a>
           </article>
           <article class="cx-paper">
-            <div class="cx-paper-source">Crimson Publishers · AMMS · 2025</div>
-            <h3>On-line XRF Analysis of Industrial Sand Impurities on a Conveyor Belt</h3>
-            <p>Research examining on-line XRF analysis for monitoring selected impurities in industrial sand on a conveyor belt.</p>
+            <div class="cx-paper-source">Journal Article · Crimson Publishers · 2025</div>
+            <h3>Online XRF Analysis of Industrial Sand Impurities on a Conveyor Belt</h3>
+            <p>Aspects in Mining &amp; Mineral Science, Vol. 13, Issue 2. Monitoring impurities such as Fe₂O₃, Al₂O₃ and TiO₂ in industrial sands on conveyors, compared with laboratory results.</p>
             <a class="cx-link" href="https://crimsonpublishers.com/amms/pdf/AMMS.000809.pdf" target="_blank" rel="noopener" data-track="paper" data-paper="industrial-sand">
-              Read Published Paper
+              Read Journal Article
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span class="sr-only">(opens in a new tab)</span>
             </a>
@@ -826,7 +823,7 @@
       <div class="container">
         <p class="cx-intro">Vocto Technologies is a global distributor for CON-X in India, Asia, Middle East, Australia &amp; USA.</p>
         <img src="fenno-aurum-logo.png" alt="Fenno Aurum – Nordic XRF Innovations" class="cx-distrib-logo" width="260" height="80" loading="lazy" />
-        <p class="cx-intro">Supported by industry pioneers Fenno Aurum, Finland. <a class="cx-link" href="https://fennoaurum.com/en/about" target="_blank" rel="noopener">Check out profile<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <p class="cx-intro">Supported by industry pioneers Fenno Aurum, Finland. <a class="cx-link" href="https://fennoaurum.com/" target="_blank" rel="noopener">Check out profile<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
     </section>
 
@@ -894,14 +891,6 @@
       </div>
     </section>
 
-    <!-- 8. CLOSING CTA -->
-    <section class="section section-white cx-closing">
-      <div class="container">
-        <h2 class="cx-h2">Explore On-line XRF Analysis for Your Operation</h2>
-        <p class="cx-intro">Share your contact details and the Vocto Technologies team can help you understand the CON-X system and its potential relevance to your application.</p>
-        <a href="#enquire" class="cx-btn" data-cta="closing">Submit an Enquiry</a>
-      </div>
-    </section>
 
   </main>
 
