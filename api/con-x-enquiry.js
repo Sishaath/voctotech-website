@@ -3,7 +3,7 @@ const COUNTRIES = require('../con-x-countries.js');
 const COUNTRY_LOOKUP = new Map(COUNTRIES.map(c => [c.toLowerCase(), c]));
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE_RE = /^\+?[0-9][0-9\s().-]{5,23}$/;
-const ENQUIRY_TO = (process.env.CONX_ENQUIRY_TO || 'sishaath@voctotechnologies.com')
+const ENQUIRY_TO = (process.env.CONX_ENQUIRY_TO || 'sishaath@voctotechnologies.com,aswath@voctotechnologies.com')
   .split(',').map(s => s.trim()).filter(Boolean);
 
 function escapeHtml(s) {
