@@ -4,412 +4,532 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE65S6VTBM"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VE65S6VTBM');</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BSI CON-X On-line XRF Conveyor Analyzer  -  Vocto Technologies is the authorized distributor for India. Real-time elemental analysis from Al to U on conveyor belts." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="CON-X on-line conveyor XRF analyzer: continuous, non-contact and non-nuclear elemental analysis of material moving on a conveyor belt for mining and mineral processing." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.voctotechnologies.com/con-x" />
-  <meta property="og:title" content="CON-X XRF Conveyor Analyzer  -  Vocto Technologies" />
-  <meta property="og:description" content="On-line non-destructive elemental analysis for mining and mineral processing. Authorized BSI distributor for India." />
-  <meta property="og:image" content="https://www.voctotechnologies.com/con-x-1.png" />
+  <meta property="og:title" content="CON-X On-line Conveyor XRF Analyzer  -  Vocto Technologies" />
+  <meta property="og:description" content="Real-time elemental analysis, directly on the conveyor. Continuous on-belt measurement for mining and mineral-processing operations." />
+  <meta property="og:image" content="https://www.voctotechnologies.com/con-x-hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>CON-X XRF Conveyor Analyzer  -  Vocto Technologies</title>
+  <title>CON-X On-line Conveyor XRF Analyzer  -  Vocto Technologies</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="preload" as="image" href="con-x-hero.jpg" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
-    /* CON-X page specific styles */
-    .conx-hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #0d2248 60%, #1a3a6b 100%);
-      padding: 100px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .conx-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('con-x-1.png') center/cover no-repeat;
-      opacity: 0.12;
-    }
-    .conx-hero-inner {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .conx-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0,194,255,0.15);
-      border: 1px solid rgba(0,194,255,0.4);
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .conx-hero-badge svg { width: 14px; height: 14px; }
-    .conx-hero h1 {
-      font-family: var(--font-head);
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .conx-hero h1 span { color: var(--cyan); }
-    .conx-hero-desc {
-      color: var(--text-light);
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-    .conx-hero-stats {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-    .conx-stat { text-align: left; }
-    .conx-stat-val {
-      font-family: var(--font-head);
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--cyan);
-      line-height: 1;
-    }
-    .conx-stat-label {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 4px;
-    }
-    .conx-hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary-conx {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--cyan);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 28px;
-      border-radius: var(--radius-md);
-      transition: background var(--transition), transform var(--transition);
-    }
-    .btn-primary-conx:hover { background: var(--cyan-dark); transform: translateY(-2px); }
-    .btn-outline-conx {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1.5px solid rgba(255,255,255,0.3);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 15px;
-      padding: 14px 28px;
-      border-radius: var(--radius-md);
-      transition: border-color var(--transition), background var(--transition);
-    }
-    .btn-outline-conx:hover { border-color: var(--cyan); background: rgba(0,194,255,0.08); }
-    .conx-hero-img {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-    }
-    .conx-hero-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
-    .conx-hero-img-badge {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0,194,255,0.3);
-      border-radius: var(--radius-md);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .conx-hero-img-badge img { height: 32px; width: auto; border-radius: 4px; }
-    .conx-hero-img-badge span { color: var(--white); font-size: 12px; font-weight: 600; line-height: 1.3; }
+    :root { --cx-nav-h: 68px; --cx-subnav-h: 52px; }
 
-    /* Overview section */
-    .conx-overview-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .cx p { text-align: left; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .cx section[id] { scroll-margin-top: calc(var(--cx-nav-h) + var(--cx-subnav-h) + 8px); }
+
+    /* ---------- Section sub-navigation ---------- */
+    .cx-subnav {
+      position: sticky;
+      top: var(--cx-nav-h);
+      z-index: 900;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
-    .conx-overview-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-    .conx-overview-img img { width: 100%; height: 320px; object-fit: cover; }
-    .section-label-sm {
+    .cx-subnav ul {
+      display: flex;
+      gap: 4px;
+      height: var(--cx-subnav-h);
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cx-subnav ul::-webkit-scrollbar { display: none; }
+    .cx-subnav a {
+      display: block;
+      white-space: nowrap;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color var(--transition), background var(--transition);
+    }
+    .cx-subnav a:hover { color: var(--navy); background: var(--light-bg); }
+    .cx-subnav a.active { color: var(--navy); background: rgba(0,194,255,0.14); }
+    .cx-subnav a.cx-subnav-enquire { color: var(--cyan-dark); }
+
+    /* ---------- Shared ---------- */
+    .cx-eyebrow {
+      display: inline-block;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
       color: var(--cyan-dark);
       margin-bottom: 12px;
     }
-    .conx-overview-title {
+    .cx-h2 {
       font-family: var(--font-head);
-      font-size: clamp(22px, 3vw, 32px);
+      font-size: clamp(26px, 4vw, 38px);
       font-weight: 800;
+      line-height: 1.18;
       color: var(--navy);
-      line-height: 1.2;
       margin-bottom: 16px;
+      text-wrap: balance;
     }
-    .conx-overview-body { color: var(--text-muted); font-size: 15.5px; line-height: 1.75; margin-bottom: 24px; }
-    .conx-bullets { display: flex; flex-direction: column; gap: 10px; }
-    .conx-bullet {
+    .cx-intro {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 760px;
+    }
+    .cx-head { margin-bottom: 40px; }
+    .cx-head.center { text-align: center; }
+    .cx-head.center .cx-intro { margin: 0 auto; text-align: center; }
+
+    .cx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--cyan);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px 30px;
+      min-height: 52px;
+      border: 0;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .cx-btn:hover { background: #33ceff; transform: translateY(-2px); }
+    .cx-btn:focus-visible, .cx-subnav a:focus-visible, .cx-link:focus-visible {
+      outline: 3px solid var(--navy-mid); outline-offset: 3px;
+    }
+    .cx-btn[disabled] { opacity: 0.7; cursor: progress; transform: none; }
+    .cx-btn svg { width: 18px; height: 18px; }
+    /* Navbar CTA uses the same cyan style as every other CTA on this page */
+    .cx-page .btn-nav-cta { background: var(--cyan); color: var(--navy) !important; font-weight: 700; }
+    .cx-page .btn-nav-cta:hover { background: #33ceff; }
+    .cx-cta-row { margin-top: 40px; text-align: center; }
+
+    .cx-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: var(--cyan-dark);
+    }
+    .cx-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .cx-link svg { width: 16px; height: 16px; }
+
+    /* ---------- Hero ---------- */
+    .cx-hero {
+      position: relative;
+      background: var(--navy);
+      color: var(--white);
+      overflow: hidden;
+    }
+    .cx-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(0,194,255,0.18), transparent 55%),
+        linear-gradient(180deg, rgba(10,22,40,0) 60%, rgba(10,22,40,0.6));
+      pointer-events: none;
+    }
+    .cx-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding-block: 88px 96px;
+    }
+    .cx-hero .cx-eyebrow { color: var(--cyan); }
+    .cx-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+    .cx-hero h1 span { color: var(--cyan); }
+    .cx-hero-text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+    .cx-hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .cx-hero .cx-link { color: var(--white); }
+    .cx-hero-brochure { margin-top: 16px; }
+    .cx-btn-outline { background: transparent; color: var(--white); box-shadow: inset 0 0 0 2px var(--cyan); }
+    .cx-btn-outline:hover { background: rgba(0,194,255,0.12); }
+    .cx-hero .cx-link:hover { color: var(--cyan); }
+    .cx-trust {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14.5px;
+      align-items: center;
+      gap: 14px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+    }
+    .cx-trust img { width: 44px; height: 44px; border-radius: 8px; background: #fff; padding: 4px; flex-shrink: 0; }
+    .cx-hero-media {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.08);
+      aspect-ratio: 4 / 3;
+    }
+    .cx-hero-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ---------- Overview / benefits ---------- */
+    .cx-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .cx-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 26px;
+    }
+    .cx-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: rgba(0,194,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .cx-card-icon svg { width: 22px; height: 22px; stroke: var(--cyan-dark); }
+    .cx-card h3 {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .cx-card p { font-size: 15px; line-height: 1.65; color: var(--text-muted); }
+    .cx-note {
+      margin-top: 32px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--cyan);
+      background: var(--white);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 15px;
       color: var(--text-dark);
     }
-    .conx-bullet-dot {
-      width: 8px;
-      height: 8px;
+
+    /* ---------- How it works ---------- */
+    .cx-how {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .cx-steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
+    .cx-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 18px;
+      padding-bottom: 28px;
+    }
+    .cx-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 25px; top: 52px; bottom: 0;
+      width: 2px;
+      background: linear-gradient(var(--cyan), rgba(0,194,255,0.15));
+    }
+    .cx-step-num {
+      counter-increment: step;
+      width: 52px; height: 52px;
       border-radius: 50%;
-      background: var(--cyan);
-      flex-shrink: 0;
-      margin-top: 7px;
+      background: var(--navy);
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cx-step-num::before { content: counter(step, decimal-leading-zero); }
+    .cx-step h3 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 12px 0 6px;
+    }
+    .cx-step p { font-size: 15.5px; line-height: 1.65; color: var(--text-muted); }
+
+    .cx-diagram {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+    }
+    .cx-diagram svg { width: 100%; height: auto; display: block; }
+    .cx-diagram figcaption {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .cx-visuals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .cx-visuals figure { margin: 0; }
+    .cx-visuals-single { grid-template-columns: 1fr; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .cx-visuals img, .cx-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+    .cx-visuals figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 10px; }
+    .cx-placeholder {
+      border: 2px dashed var(--border);
+      background: var(--light-bg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 24px;
+    }
+    .cx-placeholder svg { width: 36px; height: 36px; stroke: var(--text-muted); opacity: 0.6; }
+
+    /* ---------- Applications ---------- */
+    .cx-apps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cx-app {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border-top: 3px solid var(--cyan);
+    }
+    .cx-app h3 {
+      font-family: var(--font-head);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .cx-app p { font-size: 15px; line-height: 1.6; color: var(--text-muted); }
+
+    /* ---------- Technical ---------- */
+    .cx-specs {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .cx-spec {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cx-spec:last-child { border-bottom: 0; }
+    .cx-spec:nth-child(odd) { background: var(--light-bg); }
+    .cx-spec dt { font-weight: 700; color: var(--navy); font-size: 15px; }
+    .cx-spec dd { color: var(--text-dark); font-size: 15px; line-height: 1.6; margin: 0; }
+    .cx-spec dd .cx-tbc {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #8a5a00;
+      background: #fff3d6;
+      border-radius: 4px;
+      padding: 2px 6px;
+      vertical-align: 1px;
+    }
+    .cx-tech-actions {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
     }
 
-    /* Features */
-    .features-grid {
+    /* ---------- Research ---------- */
+    .cx-papers {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      margin-top: 48px;
     }
-    .feature-card {
+    .cx-paper {
+      display: flex;
+      flex-direction: column;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 28px 24px;
-      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      padding: 28px 26px;
+      transition: box-shadow var(--transition), border-color var(--transition);
     }
-    .feature-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-      border-color: var(--cyan);
-    }
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, rgba(0,194,255,0.12), rgba(0,194,255,0.05));
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    .feature-icon svg { width: 22px; height: 22px; stroke: var(--cyan-dark); }
-    .feature-card h4 {
-      font-family: var(--font-head);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .feature-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; }
-
-    /* Specs table */
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 32px;
-      font-size: 14.5px;
-    }
-    .specs-table thead tr { background: var(--navy); }
-    .specs-table thead th {
-      color: var(--white);
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 14px 20px;
-      text-align: left;
-    }
-    .specs-table tbody tr:nth-child(even) { background: var(--light-bg); }
-    .specs-table tbody tr:hover { background: rgba(0,194,255,0.06); }
-    .specs-table tbody td { padding: 12px 20px; border-bottom: 1px solid var(--border); color: var(--text-dark); }
-    .specs-table tbody td:first-child { font-weight: 600; color: var(--navy); width: 40%; }
-
-    /* Auth banner */
-    .auth-banner {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      border-radius: var(--radius-lg);
-      padding: 48px;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      margin-top: 64px;
-    }
-    .auth-banner-logo {
-      flex-shrink: 0;
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-    }
-    .auth-banner-logo img { height: 64px; width: auto; display: block; }
-    .auth-banner-body h3 {
-      font-family: var(--font-head);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .auth-banner-body p { color: var(--text-light); font-size: 14.5px; line-height: 1.7; margin-bottom: 16px; }
-    .auth-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-    .auth-tag {
-      background: rgba(0,194,255,0.15);
-      border: 1px solid rgba(0,194,255,0.35);
-      color: var(--cyan);
+    .cx-paper:hover { box-shadow: var(--shadow-md); border-color: var(--cyan); }
+    .cx-paper-source {
       font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    /* Inquiry form */
-    .inquiry-wrap {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-    .inquiry-header {
-      background: var(--navy);
-      padding: 32px 40px;
-    }
-    .inquiry-header h2 {
-      font-family: var(--font-head);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .inquiry-header p { color: var(--text-light); font-size: 14px; }
-    .inquiry-body { padding: 40px; }
-    .form-section { margin-bottom: 36px; }
-    .form-section-title {
-      font-family: var(--font-head);
-      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--cyan-dark);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { font-size: 13.5px; font-weight: 600; color: var(--navy); }
-    .form-group label .req { color: #e53e3e; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .cx-paper h3 {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .cx-paper p { font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
+
+    /* ---------- Distribution ---------- */
+    .cx-distrib { text-align: center; }
+    .cx-distrib .cx-intro { margin: 0 auto 16px; text-align: center; }
+    .cx-distrib-logo { width: 260px; height: 80px; object-fit: cover; margin: 8px auto 16px; }
+
+    /* ---------- Enquiry ---------- */
+    .cx-enquire { background: var(--navy); color: var(--white); }
+    .cx-enquire-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .cx-enquire .cx-h2 { color: var(--white); }
+    .cx-enquire .cx-eyebrow { color: var(--cyan); }
+    .cx-enquire .cx-intro { color: rgba(255,255,255,0.78); }
+    .cx-form-card {
+      background: var(--white);
+      color: var(--text-dark);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+    .cx-field { margin-bottom: 20px; }
+    .cx-field label {
+      display: block;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .cx-field input {
+      width: 100%;
+      font-size: 16px; /* prevents iOS zoom on focus */
+      padding: 14px 16px;
+      min-height: 52px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 11px 14px;
-      font-size: 14px;
-      color: var(--text-dark);
       background: var(--white);
+      color: var(--text-dark);
       transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .cx-field input:focus {
       outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
       border-color: var(--cyan-dark);
-      box-shadow: 0 0 0 3px rgba(0,153,204,0.12);
+      box-shadow: 0 0 0 3px rgba(0,194,255,0.2);
     }
-    .form-group input.error,
-    .form-group select.error,
-    .form-group textarea.error { border-color: #e53e3e; }
-    .form-group textarea { resize: vertical; min-height: 96px; }
-    .error-msg { font-size: 12px; color: #e53e3e; display: none; }
-    .has-error .error-msg { display: block; }
-    .hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-    .inquiry-submit {
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius-md);
-      padding: 16px 36px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background var(--transition), transform var(--transition);
-      width: 100%;
-      justify-content: center;
+    .cx-field.has-error input { border-color: #d93025; }
+    .cx-optional { font-weight: 400; opacity: 0.7; }
+    .cx-field-error { display: none; color: #c5221f; font-size: 13.5px; margin-top: 6px; }
+    .cx-field.has-error .cx-field-error { display: block; }
+    .cx-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .cx-form-card .cx-btn { width: 100%; margin-top: 4px; }
+    .cx-privacy { font-size: 13px; line-height: 1.6; color: var(--text-muted); margin-top: 16px; }
+    .cx-privacy a { color: var(--cyan-dark); text-decoration: underline; }
+    .cx-alert {
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 20px;
     }
-    .inquiry-submit:hover:not(:disabled) { background: var(--navy-mid); transform: translateY(-2px); }
-    .inquiry-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .inquiry-success {
-      display: none;
-      background: #f0fdf4;
-      border: 1.5px solid #86efac;
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-top: 20px;
-      text-align: center;
+    .cx-alert-error { background: #fdecea; color: #a50e0e; }
+    .cx-success { text-align: center; padding: 24px 8px; }
+    .cx-success-icon {
+      width: 64px; height: 64px; margin: 0 auto 16px;
+      border-radius: 50%;
+      background: rgba(0,194,255,0.14);
+      display: flex; align-items: center; justify-content: center;
     }
-    .inquiry-success.show { display: block; }
-    .inquiry-no-display {
-      font-family: var(--font-head);
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: 2px;
-      margin: 12px 0 6px;
-    }
-    .inquiry-success p { color: var(--text-muted); font-size: 14px; }
-    .inquiry-success strong { color: var(--navy); }
+    .cx-success-icon svg { width: 30px; height: 30px; stroke: var(--cyan-dark); }
+    .cx-success h3 { font-family: var(--font-head); font-size: 22px; color: var(--navy); margin-bottom: 8px; }
+    .cx-success p { color: var(--text-muted); text-align: center; line-height: 1.6; }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .conx-hero-inner,
-      .conx-overview-grid { grid-template-columns: 1fr; }
-      .conx-hero-img { display: none; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .auth-banner { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px; }
-      .form-row, .form-row.three { grid-template-columns: 1fr; }
-      .inquiry-body { padding: 24px; }
-      .inquiry-header { padding: 24px; }
+    /* ---------- Closing CTA ---------- */
+    .cx-closing { text-align: center; }
+    .cx-closing .cx-intro { margin: 0 auto 32px; text-align: center; }
+
+    /* ---------- Sticky mobile action bar ---------- */
+    .cx-mobile-bar {
+      display: none;
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 950;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      background: rgba(10,22,40,0.94);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.25s ease;
     }
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .conx-hero { padding: 64px 0 56px; }
+    .cx-mobile-bar .cx-btn { width: 100%; }
+    .cx-mobile-bar.is-hidden { transform: translateY(110%); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .cx-hero-inner, .cx-how, .cx-enquire-inner { grid-template-columns: 1fr; gap: 40px; }
+      .cx-hero-inner { padding-block: 48px 64px; }
+      .cx-hero-media { order: -1; }
+      .cx-benefits, .cx-apps, .cx-papers { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .cx-mobile-bar { display: block; }
+      body.cx-page { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+      .cx-hero-actions .cx-btn { width: 100%; }
+      .cx-hero-actions { gap: 18px; }
+    }
+    @media (max-width: 640px) {
+      .cx-benefits, .cx-apps, .cx-papers, .cx-visuals { grid-template-columns: 1fr; }
+      .cx-spec { grid-template-columns: 1fr; gap: 4px; padding: 16px 18px; }
+      .cx-form-card { padding: 24px 20px; }
+      .cx-intro { font-size: 16px; }
+      .cx-head { margin-bottom: 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cx-btn, .cx-mobile-bar { transition: none; }
     }
   </style>
 </head>
-<body>
-
-  <!-- TOP INFO BAR -->
-  <div class="top-bar">
-    <div class="container">
-      <a href="mailto:admin@voctotechnologies.com" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        admin@voctotechnologies.com
-      </a>
-    </div>
-  </div>
+<body class="cx-page">
 
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
@@ -429,8 +549,7 @@
           <li><a href="/careers">Careers</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
-        <a href="/portal/" class="btn-portal desktop-only">Employee Portal</a>
-        <a href="/con-x-inquiry" class="btn-nav-cta desktop-only">Request a Quote</a>
+        <a href="#enquire" class="btn-nav-cta desktop-only" data-cta="navbar">Submit an Enquiry</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -445,210 +564,351 @@
         <a href="/careers">Careers</a>
         <a href="/contact">Contact</a>
         <a href="/portal/">Employee Portal</a>
-        <a href="/con-x-inquiry" class="btn-nav-cta">Request a Quote</a>
       </nav>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="conx-hero">
+  <!-- SECTION NAV -->
+  <nav class="cx-subnav" aria-label="CON-X page sections">
     <div class="container">
-      <div class="conx-hero-inner">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#technical">Technical Details</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#enquire" class="cx-subnav-enquire">Enquire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="cx">
+
+    <!-- 1. HERO -->
+    <section class="cx-hero">
+      <div class="container cx-hero-inner">
         <div>
-          <div class="conx-hero-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Authorized Distributor for India
+          <span class="cx-eyebrow">On-line Conveyor XRF Analyzer</span>
+          <h1>Real-Time Elemental Analysis. <span>Directly on the Conveyor.</span></h1>
+          <p class="cx-hero-text">CON-X provides continuous, non-contact and non-nuclear elemental analysis of material moving on a conveyor belt, helping mining and mineral-processing operations monitor grade variation and make more informed blending, beneficiation, and process-control decisions.</p>
+          <div class="cx-hero-actions">
+            <a href="#enquire" class="cx-btn" data-cta="hero">Submit an Enquiry</a>
+            <a href="#research" class="cx-link">
+              Check Out Research Papers
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
           </div>
-          <h1>CON-X <span>On-line XRF</span><br>Conveyor Analyzer</h1>
-          <p class="conx-hero-desc">Real-time, non-destructive elemental analysis of ores and minerals directly on the conveyor belt  -  from Aluminium (Z=13) to Uranium (Z=92). Manufactured by Baltic Scientific Instruments, Latvia.</p>
-          <div class="conx-hero-stats">
-            <div class="conx-stat">
-              <div class="conx-stat-val">Al–U</div>
-              <div class="conx-stat-label">Element Range</div>
-            </div>
-            <div class="conx-stat">
-              <div class="conx-stat-val">6–25 cm</div>
-              <div class="conx-stat-label">Installation Height</div>
-            </div>
-            <div class="conx-stat">
-              <div class="conx-stat-val">100%</div>
-              <div class="conx-stat-label">On-line, Real-time</div>
-            </div>
+          <div class="cx-hero-brochure">
+            <a href="/con-x-brochure.pdf" class="cx-btn cx-btn-outline" target="_blank" rel="noopener" data-track="brochure">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Brochure (PDF)
+            </a>
           </div>
-          <div class="conx-hero-cta">
-            <a href="/con-x-inquiry" class="btn-primary-conx">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Submit Inquiry
-            </a>
-            <a href="/con-x-brochure.pdf" download="Con-X Vocto Brochure.pdf" class="btn-outline-conx">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Brochure
-            </a>
-            <a href="#specs" class="btn-outline-conx">
-              View Specifications
-            </a>
+          <div class="cx-trust">
+            <img src="bsi-logo.png" alt="" width="44" height="44" />
+            <span>Designed and manufactured by Baltic Scientific Instruments, Latvia. Distributed and supported through an international partner network.</span>
           </div>
         </div>
-        <div class="conx-hero-img">
-          <img src="con-x-1.png" alt="CON-X XRF Analyzer mounted on conveyor belt" />
-          <div class="conx-hero-img-badge">
-            <img src="bsi-logo.png" alt="Baltic Scientific Instruments" />
-            <span>Baltic Scientific<br>Instruments</span>
-          </div>
+        <div class="cx-hero-media">
+          <img src="con-x-hero.jpg" width="1400" height="1050" fetchpriority="high"
+               alt="CON-X analyzer head in an orange and yellow housing, suspended a few centimetres above a conveyor belt carrying dark ore" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- OVERVIEW -->
-  <section class="section section-white">
-    <div class="container">
-      <div class="conx-overview-grid">
-        <div class="conx-overview-img">
-          <img src="con-x-2.png" alt="CON-X XRF Analyzer in operation on conveyor" />
+    <!-- 2. OVERVIEW -->
+    <section class="section section-light" id="overview">
+      <div class="container">
+        <div class="cx-head">
+          <span class="cx-eyebrow">Overview</span>
+          <h2 class="cx-h2">Better Visibility Into Material Grade</h2>
+          <p class="cx-intro">Laboratory analysis remains important for calibration and verification, but sampling provides results for selected samples at specific points in time. Material composition can vary between samples. CON-X adds continuous on-belt measurement to give plant teams more frequent information about the material moving through their process.</p>
         </div>
+        <div class="cx-benefits">
+          <div class="cx-card">
+            <div class="cx-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h3>Continuous On-Belt Measurement</h3>
+            <p>Monitor elemental composition of material moving on the conveyor, rather than relying only on intermittent sample results.</p>
+          </div>
+          <div class="cx-card">
+            <div class="cx-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h3>More Timely Process Information</h3>
+            <p>Use ongoing grade information to support blending, beneficiation, and operational decisions.</p>
+          </div>
+          <div class="cx-card">
+            <div class="cx-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3>Designed for Plant Integration</h3>
+            <p>Measurement data can be integrated with plant control and monitoring systems using supported interfaces, subject to project configuration.</p>
+          </div>
+          <div class="cx-card">
+            <div class="cx-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            <h3>Non-Nuclear</h3>
+            <p>CON-X is a non-nuclear device, without the burden of nuclear licensing, safety and high costs.</p>
+          </div>
+        </div>
+        <p class="cx-note">CON-X complements laboratory analysis; it does not remove the need for appropriate calibration and verification.</p>
+      </div>
+    </section>
+
+    <!-- 3. HOW IT WORKS -->
+    <section class="section section-white" id="how-it-works">
+      <div class="container">
+        <div class="cx-head">
+          <span class="cx-eyebrow">How It Works</span>
+          <h2 class="cx-h2">How CON-X Works</h2>
+          <p class="cx-intro">The CON-X on-line conveyor XRF analyzer measures characteristic X-ray fluorescence from material moving on a conveyor belt. The system processes the detected signals to provide elemental measurement results over a configured measurement period.</p>
+        </div>
+        <div class="cx-how">
+          <ol class="cx-steps">
+            <li class="cx-step">
+              <div class="cx-step-num" aria-hidden="true"></div>
+              <div>
+                <h3>Measure</h3>
+                <p>The analyzer head is installed above or across the conveyor to measure the moving material without direct contact.</p>
+              </div>
+            </li>
+            <li class="cx-step">
+              <div class="cx-step-num" aria-hidden="true"></div>
+              <div>
+                <h3>Analyze</h3>
+                <p>The detector measures characteristic X-ray fluorescence signals associated with elements in the material.</p>
+              </div>
+            </li>
+            <li class="cx-step">
+              <div class="cx-step-num" aria-hidden="true"></div>
+              <div>
+                <h3>Use the Results</h3>
+                <p>Elemental results and configured averages can support grade monitoring, process decisions, historical trending, and plant-system integration.</p>
+              </div>
+            </li>
+          </ol>
+
+          <figure class="cx-diagram">
+            <svg viewBox="0 0 520 300" role="img" aria-labelledby="cxDiagTitle">
+              <title id="cxDiagTitle">Diagram: the CON-X head sits above the conveyor, X-rays excite the moving material, the detector reads the fluorescence, and results go to the plant control system.</title>
+              <defs>
+                <marker id="cxArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#00C2FF"/>
+                </marker>
+              </defs>
+              <!-- analyzer head -->
+              <rect x="150" y="40" width="160" height="70" rx="8" fill="#1A3A6B" stroke="#00C2FF" stroke-width="1.5"/>
+              <text x="230" y="72" text-anchor="middle" fill="#fff" font-size="15" font-weight="700" font-family="Plus Jakarta Sans, sans-serif">CON-X head</text>
+              <text x="230" y="92" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11.5" font-family="DM Sans, sans-serif">X-ray tube · SDD detector</text>
+              <!-- beams -->
+              <line x1="200" y1="112" x2="220" y2="178" stroke="#00C2FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#cxArrow)"/>
+              <line x1="250" y1="178" x2="268" y2="114" stroke="#7FE0FF" stroke-width="2" marker-end="url(#cxArrow)"/>
+              <text x="140" y="150" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="11.5" font-family="DM Sans, sans-serif">excitation</text>
+              <text x="282" y="150" fill="rgba(255,255,255,0.75)" font-size="11.5" font-family="DM Sans, sans-serif">fluorescence</text>
+              <!-- material + belt -->
+              <path d="M40 200 Q 120 176 230 182 T 420 200 Z" fill="#3b4656"/>
+              <rect x="30" y="200" width="400" height="10" rx="5" fill="#6b7a90"/>
+              <circle cx="50" cy="222" r="10" fill="none" stroke="#6b7a90" stroke-width="2"/>
+              <circle cx="410" cy="222" r="10" fill="none" stroke="#6b7a90" stroke-width="2"/>
+              <line x1="60" y1="252" x2="160" y2="252" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" marker-end="url(#cxArrow)"/>
+              <text x="60" y="272" fill="rgba(255,255,255,0.6)" font-size="11.5" font-family="DM Sans, sans-serif">belt direction</text>
+              <!-- output -->
+              <line x1="312" y1="75" x2="388" y2="75" stroke="#00C2FF" stroke-width="2" marker-end="url(#cxArrow)"/>
+              <rect x="392" y="45" width="112" height="60" rx="8" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+              <text x="448" y="71" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" font-family="Plus Jakarta Sans, sans-serif">Plant system</text>
+              <text x="448" y="89" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-family="DM Sans, sans-serif">results &amp; trends</text>
+            </svg>
+            <figcaption>Simplified schematic. Not to scale.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cx-visuals cx-visuals-single">
+          <figure>
+            <img src="con-x-install.jpg" width="1000" height="750" loading="lazy"
+                 alt="Close-up of the CON-X analyzer housing mounted on a steel frame above a loaded conveyor belt" />
+            <figcaption>CON-X installed over a production conveyor.</figcaption>
+          </figure>
+          <!-- TODO: add a second <figure> with the CON-X software / spectrum screenshot from BSI (grid reverts to two columns) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. APPLICATIONS -->
+    <section class="section section-light" id="applications">
+      <div class="container">
+        <div class="cx-head">
+          <span class="cx-eyebrow">Applications</span>
+          <h2 class="cx-h2">Applications Across Mining and Mineral Processing</h2>
+          <p class="cx-intro">CON-X can be configured for suitable applications where elemental composition of material moving on a conveyor needs to be monitored. Application suitability depends on the material matrix, target elements, installation conditions, calibration, and measurement requirements.</p>
+        </div>
+        <div class="cx-apps">
+          <div class="cx-app"><h3>Iron Ore</h3><p>Monitor elemental composition to support grade awareness and process decisions across iron-ore handling and processing.</p></div>
+          <div class="cx-app"><h3>Chromite and Ferrochrome</h3><p>Support elemental monitoring for chromite ore, ferrochrome, and related processing streams.</p></div>
+          <div class="cx-app"><h3>Manganese Ore</h3><p>Track relevant elemental composition in manganese-ore processing applications.</p></div>
+          <div class="cx-app"><h3>Base-Metal Ores</h3><p>Evaluate suitable applications involving copper, zinc, and other base-metal ores.</p></div>
+          <div class="cx-app"><h3>Industrial Sand</h3><p>Assess selected impurity-monitoring applications, including iron content in industrial sand.</p></div>
+          <div class="cx-app"><h3>Slag and Metallurgical Materials</h3><p>Evaluate suitable applications for slag and other metallurgical bulk materials.</p></div>
+        </div>
+        <div class="cx-cta-row">
+          <a href="#enquire" class="cx-btn" data-cta="applications">Submit an Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TECHNICAL -->
+    <section class="section section-white" id="technical">
+      <div class="container">
+        <div class="cx-head">
+          <span class="cx-eyebrow">Technical Details</span>
+          <h2 class="cx-h2">Technical Overview</h2>
+          <p class="cx-intro">CON-X system configuration is selected according to the material, target elements, conveyor arrangement, measurement objectives, and plant environment.</p>
+        </div>
+        <dl class="cx-specs">
+          <div class="cx-spec"><dt>Detector</dt><dd>Silicon Drift Detector (SDD)</dd></div>
+          <div class="cx-spec"><dt>Excitation source</dt><dd>Sealed X-ray tube; application-dependent</dd></div>
+          <div class="cx-spec"><dt>Element range</dt><dd>Sulphur (Z=16) through uranium (Z=92), subject to application and measurement conditions</dd></div>
+          <div class="cx-spec"><dt>Measurement</dt><dd>Continuous acquisition with configurable measurement periods and rolling averages</dd></div>
+          <div class="cx-spec"><dt>Installation</dt><dd>Over-belt or cross-belt configuration, depending on site requirements</dd></div>
+          <div class="cx-spec"><dt>Plant interfaces</dt><dd>Modbus TCP/RTU and OPC-UA, subject to configuration</dd></div>
+          <div class="cx-spec"><dt>Calibration</dt><dd>Calibration using customer reference samples and appropriate standards</dd></div>
+          <div class="cx-spec"><dt>Environmental conditions</dt><dd>Operating temperature and ingress protection per current datasheet</dd></div>
+        </dl>
+        <div class="cx-tech-actions">
+          <a href="/con-x-brochure.pdf" class="cx-link" target="_blank" rel="noopener" data-track="brochure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Product Brochure (PDF)
+          </a>
+          <a href="#enquire" class="cx-btn" data-cta="technical">Submit an Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RESEARCH -->
+    <section class="section section-light" id="research">
+      <div class="container">
+        <div class="cx-head">
+          <span class="cx-eyebrow">Research</span>
+          <h2 class="cx-h2">Research-Backed On-line XRF Analysis</h2>
+          <p class="cx-intro">Explore published research related to on-line XRF analysis for mineral processing, conveyor-belt elemental monitoring, rare earth elements, and industrial material quality control. These papers provide technical context and examples of measurement approaches and application studies.</p>
+        </div>
+        <div class="cx-papers">
+          <article class="cx-paper">
+            <div class="cx-paper-source">MDPI · Mining · Vol. 5</div>
+            <h3>On-line XRF Analysis in Mining &amp; Mineral Processing</h3>
+            <p>Published research on on-line XRF analysis in mining and mineral-processing applications.</p>
+            <a class="cx-link" href="https://www.mdpi.com/2673-6489/5/4/77" target="_blank" rel="noopener" data-track="paper" data-paper="mining-mineral-processing">
+              Read Published Paper
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </article>
+          <article class="cx-paper">
+            <div class="cx-paper-source">MDPI · Mining · Vol. 6</div>
+            <h3>On-line XRF Analysis of Rare Earth Elements</h3>
+            <p>Research into on-line XRF analysis for rare earth elements and related measurement considerations.</p>
+            <a class="cx-link" href="https://www.mdpi.com/2673-6489/6/2/39" target="_blank" rel="noopener" data-track="paper" data-paper="rare-earth-elements">
+              Read Published Paper
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </article>
+          <article class="cx-paper">
+            <div class="cx-paper-source">Crimson Publishers · AMMS · 2025</div>
+            <h3>On-line XRF Analysis of Industrial Sand Impurities on a Conveyor Belt</h3>
+            <p>Research examining on-line XRF analysis for monitoring selected impurities in industrial sand on a conveyor belt.</p>
+            <a class="cx-link" href="https://crimsonpublishers.com/amms/pdf/AMMS.000809.pdf" target="_blank" rel="noopener" data-track="paper" data-paper="industrial-sand">
+              Read Published Paper
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6b. DISTRIBUTION -->
+    <section class="section section-white cx-distrib" id="distribution">
+      <div class="container">
+        <p class="cx-intro">Vocto Technologies is a global distributor for CON-X in India, Asia, Middle East, Australia &amp; USA.</p>
+        <img src="fenno-aurum-logo.png" alt="Fenno Aurum – Nordic XRF Innovations" class="cx-distrib-logo" width="260" height="80" loading="lazy" />
+        <p class="cx-intro">Supported by industry pioneers Fenno Aurum, Finland. <a class="cx-link" href="https://fennoaurum.com/en/about" target="_blank" rel="noopener">Check out profile<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </section>
+
+    <!-- 7. ENQUIRY -->
+    <section class="section cx-enquire" id="enquire">
+      <div class="container cx-enquire-inner">
         <div>
-          <p class="section-label-sm">Product Overview</p>
-          <h2 class="conx-overview-title">Continuous On-belt Analysis  -  No Sampling Required</h2>
-          <p class="conx-overview-body">
-            The CON-X is mounted directly above the conveyor belt and continuously identifies the elemental composition of the material passing beneath it. Unlike laboratory analysis, there is no delay, no sample preparation, and no human intervention  -  results are delivered in real time for immediate process decisions.
-          </p>
-          <div class="conx-bullets">
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>Mounted above conveyor  -  analyses material in motion, no belt stoppage</span></div>
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>Detects all elements from Al (Z=13) to U (Z=92)</span></div>
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>Stable results in harsh environments: dust, extreme temperatures, variable humidity</span></div>
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>Results independent of lump size and humidity within the allowable range</span></div>
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>OPC, 4–20 mA and Ethernet outputs for easy integration</span></div>
-            <div class="conx-bullet"><div class="conx-bullet-dot"></div><span>Remote monitoring and support via Internet</span></div>
+          <span class="cx-eyebrow">Enquire</span>
+          <h2 class="cx-h2">Enquire About CON-X</h2>
+          <p class="cx-intro">Would you like to learn more about CON-X or explore its suitability for your operation? Submit your details and the Vocto Technologies team will follow up.</p>
+        </div>
+        <div class="cx-form-card">
+          <form id="cxForm" novalidate>
+            <div class="cx-alert cx-alert-error" id="cxFormError" role="alert" hidden>We couldn’t submit your enquiry. Please check your details and try again.</div>
+
+            <div class="cx-hp" aria-hidden="true">
+              <label for="cx_hp">Leave this field empty</label>
+              <input type="text" id="cx_hp" name="_hp" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="cx-field" id="f-name">
+              <label for="cxName">Name</label>
+              <input type="text" id="cxName" name="name" autocomplete="name" required maxlength="120" aria-describedby="cxNameErr" />
+              <div class="cx-field-error" id="cxNameErr">Please enter your name.</div>
+            </div>
+            <div class="cx-field" id="f-email">
+              <label for="cxEmail">Work Email</label>
+              <input type="email" id="cxEmail" name="email" autocomplete="email" inputmode="email" required maxlength="254" aria-describedby="cxEmailErr" />
+              <div class="cx-field-error" id="cxEmailErr">Please enter a valid email address.</div>
+            </div>
+            <div class="cx-field" id="f-company">
+              <label for="cxCompany">Company</label>
+              <input type="text" id="cxCompany" name="company" autocomplete="organization" required maxlength="160" aria-describedby="cxCompanyErr" />
+              <div class="cx-field-error" id="cxCompanyErr">Please enter your company name.</div>
+            </div>
+            <div class="cx-field" id="f-country">
+              <label for="cxCountry">Country</label>
+              <input type="text" id="cxCountry" name="country" list="cxCountries" autocomplete="country-name" required placeholder="Start typing to search…" aria-describedby="cxCountryErr" />
+              <datalist id="cxCountries"></datalist>
+              <div class="cx-field-error" id="cxCountryErr">Please choose a country from the list.</div>
+            </div>
+            <div class="cx-field" id="f-phone">
+              <label for="cxPhone">Phone <span class="cx-optional">(optional)</span></label>
+              <input type="tel" id="cxPhone" name="phone" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="+91 98765 43210" aria-describedby="cxPhoneErr" />
+              <div class="cx-field-error" id="cxPhoneErr">Please enter a valid phone number, including country code.</div>
+            </div>
+
+            <div class="cf-turnstile" id="cf-turnstile"
+                 data-sitekey="0x4AAAAAADYTz_60WsG0gKPa"
+                 data-size="invisible"
+                 data-callback="onCfToken"
+                 data-expired-callback="onCfExpired"
+                 data-error-callback="onCfError"></div>
+
+            <button type="submit" class="cx-btn" id="cxSubmit">Submit an Enquiry</button>
+            <p class="cx-privacy">By submitting this form, you agree that Vocto Technologies may use your details to respond to your enquiry.</p>
+          </form>
+
+          <div class="cx-success" id="cxSuccess" role="status" tabindex="-1" hidden>
+            <div class="cx-success-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3>Enquiry received</h3>
+            <p>Thank you for your enquiry. The Vocto Technologies team has received your details and will be in touch.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FEATURES -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Why CON-X</span>
-        <h2 class="section-title">Key Features</h2>
-        <p class="section-desc" style="margin:0 auto;">Engineered for the most demanding industrial environments in mining, mineral processing, and heavy industry.</p>
+    <!-- 8. CLOSING CTA -->
+    <section class="section section-white cx-closing">
+      <div class="container">
+        <h2 class="cx-h2">Explore On-line XRF Analysis for Your Operation</h2>
+        <p class="cx-intro">Share your contact details and the Vocto Technologies team can help you understand the CON-X system and its potential relevance to your application.</p>
+        <a href="#enquire" class="cx-btn" data-cta="closing">Submit an Enquiry</a>
       </div>
-      <div class="features-grid">
+    </section>
 
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h4>Real-Time On-line Analysis</h4>
-          <p>Continuous measurement while the belt is running. No delays, no lab turnaround, no sampling queues. Data delivered immediately to your control room.</p>
-        </div>
+  </main>
 
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h4>Non-Destructive</h4>
-          <p>XRF technology measures elemental composition without altering or consuming the material. Full production throughput is maintained during analysis.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h4>Broad Element Detection</h4>
-          <p>Detects and quantifies elements from Aluminium (Z=13) through Uranium (Z=92)  -  covering virtually every element of industrial importance in mining and processing.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h4>Rugged Industrial Design</h4>
-          <p>Built for dust, low/high temperatures, and variable humidity. High precision and stability of results is maintained even in the most severe plant environments.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h4>Simple Operation & Integration</h4>
-          <p>Easy operator interface. OPC communication, 4–20 mA analogue output, and Ethernet connectivity allow seamless integration with existing plant DCS or SCADA systems.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h4>Remote Support</h4>
-          <p>BSI provides remote diagnostics and support via Internet. Firmware updates, calibration assistance, and troubleshooting without requiring an on-site visit.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SPECIFICATIONS -->
-  <section class="section section-white" id="specs">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Technical Data</span>
-        <h2 class="section-title">Specifications</h2>
-      </div>
-      <table class="specs-table">
-        <thead>
-          <tr>
-            <th>Parameter</th>
-            <th>Specification</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Measurement Method</td><td>X-Ray Fluorescence (XRF)  -  Energy Dispersive</td></tr>
-          <tr><td>Element Detection Range</td><td>Al (Z=13) to U (Z=92)</td></tr>
-          <tr><td>Installation Height</td><td>6 – 25 cm above the material surface</td></tr>
-          <tr><td>Mounting</td><td>Above conveyor belt, non-contact</td></tr>
-          <tr><td>Measurement Mode</td><td>Continuous on-line, real-time</td></tr>
-          <tr><td>Empty Belt Exclusion</td><td>Automatic algorithm  -  no measurement on empty belt</td></tr>
-          <tr><td>Result Independence</td><td>Independent of lump size and relative humidity (within allowable range)</td></tr>
-          <tr><td>Communication Outputs</td><td>OPC, 4–20 mA analogue, Ethernet</td></tr>
-          <tr><td>Remote Support</td><td>Via Internet connection</td></tr>
-          <tr><td>Operating Environment</td><td>High dust, variable temperature and humidity  -  industrial grade</td></tr>
-          <tr><td>Manufacturer</td><td>Baltic Scientific Instruments, Ltd.  -  Riga, Latvia</td></tr>
-          <tr><td>Authorized Distributor (India)</td><td>Vocto Technologies Private Limited, Chennai</td></tr>
-        </tbody>
-      </table>
-
-      <!-- AUTH BANNER -->
-      <div class="auth-banner">
-        <div class="auth-banner-logo">
-          <img src="bsi-logo.png" alt="Baltic Scientific Instruments logo" />
-        </div>
-        <div class="auth-banner-body">
-          <h3>Authorized Indian Distributor  -  Baltic Scientific Instruments</h3>
-          <p>
-            Vocto Technologies Private Limited has been formally authorized by Baltic Scientific Instruments, Ltd. (Riga, Latvia) to represent and distribute BSI products in the Republic of India.
-          </p>
-          <div class="auth-tags">
-            <span class="auth-tag">BSI Authorized</span>
-            <span class="auth-tag">India Distribution Rights</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INQUIRY CTA -->
-  <section class="section section-light">
-    <div class="container" style="text-align:center;">
-      <span class="section-label">Get a Quote</span>
-      <h2 class="section-title" style="margin:12px 0 16px;">Ready to Discuss Your Application?</h2>
-      <p class="section-desc" style="max-width:560px;margin:0 auto 32px;">Complete our technical questionnaire so our team can prepare an accurate proposal for your specific application.</p>
-      <a href="/con-x-inquiry" class="btn-primary-conx" style="display:inline-flex;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Submit Inquiry
-      </a>
-    </div>
-  </section>
+  <!-- STICKY MOBILE ACTION BAR -->
+  <div class="cx-mobile-bar" id="cxMobileBar">
+    <a href="#enquire" class="cx-btn" data-cta="mobile-bar">Submit an Enquiry</a>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -660,11 +920,6 @@
             <div class="logo-text">Vocto Technologies</div>
           </div>
           <p class="footer-tagline">Building Visions, Shaping The Future. Authorized Indian distributor for Baltic Scientific Instruments  -  precision XRF measurement solutions.</p>
-          <div class="footer-socials">
-            <a href="mailto:admin@voctotechnologies.com" class="social-link" aria-label="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-          </div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
@@ -701,14 +956,15 @@
     </div>
   </footer>
 
+  <script src="/con-x-countries.js"></script>
   <script>
-    // Sticky nav
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    function track(name, params) {
+      try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (_) {}
+    }
 
-    // Hamburger
+    // ---- Main navbar (same behaviour as other pages) ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     hamburger.addEventListener('click', () => {
@@ -716,16 +972,150 @@
       hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
     });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    }));
+
+    // ---- Section nav: highlight the section in view ----
+    const subLinks = [...document.querySelectorAll('.cx-subnav a')];
+    const sections = subLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        subLinks.forEach(a => {
+          const on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('active', on);
+          if (on) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        });
       });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => s && spy.observe(s));
+
+    // ---- Mobile action bar: hide while the form is on screen ----
+    const bar = document.getElementById('cxMobileBar');
+    new IntersectionObserver(([e]) => bar.classList.toggle('is-hidden', e.isIntersecting), { threshold: 0.15 })
+      .observe(document.getElementById('enquire'));
+
+    // ---- CTAs: every "Submit an Enquiry" scrolls to the form and focuses the first field ----
+    document.querySelectorAll('[data-cta]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      track('enquiry_cta_click', { cta_location: a.dataset.cta });
+      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(null, '', '#enquire');
+      setTimeout(() => {
+        const first = document.getElementById('cxName');
+        if (first && !document.getElementById('cxForm').hidden) first.focus({ preventScroll: true });
+      }, 600);
+    }));
+
+    // ---- Brochure + research tracking ----
+    document.querySelectorAll('[data-track="brochure"]').forEach(a =>
+      a.addEventListener('click', () => track('brochure_download', { file_name: 'con-x-brochure.pdf' })));
+    document.querySelectorAll('[data-track="paper"]').forEach(a =>
+      a.addEventListener('click', () => track('research_paper_click', { paper: a.dataset.paper, link_url: a.href })));
+
+    // ---- Enquiry form ----
+    const COUNTRIES = window.CONX_COUNTRIES || [];
+    const dl = document.getElementById('cxCountries');
+    // India first so most visitors don't have to search for it
+    const COUNTRY_OPTIONS = ['India', ...COUNTRIES.filter(c => c !== 'India')];
+    dl.innerHTML = COUNTRY_OPTIONS.map(c => `<option value="${c.replace(/"/g, '&quot;')}"></option>`).join('');
+    const countryLookup = new Map(COUNTRIES.map(c => [c.toLowerCase(), c]));
+
+    const form = document.getElementById('cxForm');
+    const formError = document.getElementById('cxFormError');
+    const submitBtn = document.getElementById('cxSubmit');
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const PHONE_RE = /^\+?[0-9][0-9\s().-]{5,23}$/;
+
+    let started = false;
+    form.addEventListener('focusin', () => {
+      if (!started) { started = true; track('enquiry_form_start'); }
     });
 
+    function setErr(id, bad) {
+      const f = document.getElementById(id);
+      f.classList.toggle('has-error', bad);
+      f.querySelector('input').setAttribute('aria-invalid', bad ? 'true' : 'false');
+    }
+
+    function validate() {
+      const $ = id => document.getElementById(id);
+      const name = $('cxName').value.trim();
+      const email = $('cxEmail').value.trim();
+      const company = $('cxCompany').value.trim();
+      const country = countryLookup.get($('cxCountry').value.trim().toLowerCase());
+      const phone = $('cxPhone').value.trim();
+      setErr('f-name', !name);
+      setErr('f-email', !EMAIL_RE.test(email));
+      setErr('f-company', !company);
+      setErr('f-country', !country);
+      setErr('f-phone', !!phone && !PHONE_RE.test(phone));
+      if (country) $('cxCountry').value = country;
+      const firstBad = form.querySelector('.has-error input');
+      if (firstBad) { firstBad.focus(); return null; }
+      return { name, email, company, country, phone };
+    }
+
+    // Clear a field's error as soon as it's corrected
+    form.querySelectorAll('.cx-field input').forEach(inp =>
+      inp.addEventListener('input', () => inp.closest('.cx-field').classList.remove('has-error')));
+
+    // Turnstile (invisible) — same fallback behaviour as the old inquiry page
+    let cfToken = null, pending = null, cfTimer = null;
+    function flush() {
+      if (cfTimer) { clearTimeout(cfTimer); cfTimer = null; }
+      if (pending) { const p = pending; pending = null; send(p); }
+    }
+    function onCfToken(t) { cfToken = t; flush(); }
+    function onCfExpired() { cfToken = null; try { turnstile.reset(); } catch (_) {} }
+    function onCfError() { cfToken = null; flush(); }
+
+    function setBusy(busy) {
+      submitBtn.disabled = busy;
+      submitBtn.textContent = busy ? 'Submitting…' : 'Submit an Enquiry';
+    }
+
+    async function send(data) {
+      setBusy(true);
+      try {
+        const res = await fetch('/api/con-x-enquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, _hp: document.getElementById('cx_hp').value, _ts: cfToken }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || !out.success) throw new Error(out.error || 'failed');
+        track('enquiry_submit_success', { country: data.country });
+        form.hidden = true;
+        const ok = document.getElementById('cxSuccess');
+        ok.hidden = false;
+        ok.focus();
+        bar.classList.add('is-hidden');
+      } catch (_) {
+        track('enquiry_submit_error');
+        formError.hidden = false;
+        try { turnstile.reset('#cf-turnstile'); } catch (_) {}
+        cfToken = null;
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      formError.hidden = true;
+      if (document.getElementById('cx_hp').value) return;
+      const data = validate();
+      if (!data) return;
+      if (cfToken) return send(data);
+      pending = data;
+      setBusy(true);
+      cfTimer = setTimeout(() => { cfTimer = null; flush(); }, 8000);
+      try { turnstile.execute('#cf-turnstile'); } catch (_) { flush(); }
+    });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="/animations.js"></script>
 </body>
 </html>

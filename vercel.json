@@ -4,25 +4,76 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/leadership", "destination": "/leadership.html" },
-    { "source": "/partnerships", "destination": "/partnerships.html" },
-    { "source": "/con-x", "destination": "/con-x.html" },
-    { "source": "/con-x-inquiry", "destination": "/con-x-inquiry.html" },
-    { "source": "/careers", "destination": "/careers.html" },
-    { "source": "/portal/(.*)", "destination": "/portal/index.html" },
-    { "source": "/portal", "destination": "/portal/index.html" }
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/leadership",
+      "destination": "/leadership.html"
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/partnerships.html"
+    },
+    {
+      "source": "/con-x",
+      "destination": "/con-x.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/portal/(.*)",
+      "destination": "/portal/index.html"
+    },
+    {
+      "source": "/portal",
+      "destination": "/portal/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/con-x-inquiry",
+      "destination": "/con-x#enquire",
+      "permanent": true
+    }
   ]
 }
